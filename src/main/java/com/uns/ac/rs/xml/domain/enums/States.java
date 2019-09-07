@@ -5,7 +5,7 @@ public enum States {
     SCHEDULING("scheduling"),
     WAITING("waiting"),
     EXAM_CHANGED("exam_changed"),
-    GENERALIST_EXAAM("exam_doctor_gen"),
+    GENERALIST_EXAM("exam_doctor_gen"),
     SPECIALIST_EXAM("exam_doctor_spec"),
     END("end");
 
