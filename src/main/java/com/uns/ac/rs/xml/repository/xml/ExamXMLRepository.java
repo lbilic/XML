@@ -114,6 +114,7 @@ public class ExamXMLRepository extends IOStreamer {
 
             String queryContent = String.format(this.loadFileContents(pathToQuery),
                     prefix, mapper.getPrefix("exam"), mapper.getPath("exams"), addedId,
+                    mapper.getPrefix("exams"));
             long mods = xupdateService.updateResource(mapper.getDocument("exams"), queryContent);
 
             connection.freeResources(resources);
@@ -141,8 +142,8 @@ public class ExamXMLRepository extends IOStreamer {
             } catch (Exception ignored) {
             }
         }
-        doctorXMLRepository.searchById(doctorId);
-        chartXMLRepository.searchById(userId);
+        doctorXMLRepository.findById(doctorId);
+        chartXMLRepository.findById(userId);
     }
 
     public String delete(com.uns.ac.rs.xml.util.actions.Action action) {
