@@ -1,3 +1,11 @@
-<p>
-  schedule-exam works!
-</p>
+<div id="wrapper">
+    <label>Choose Appointment:</label>
+    <select [(ngModel)]="scheduledExam">
+      <option *ngFor="let exam of exams"></option>
+      <option>Exam 1</option>
+      <option>Exam 2</option>
+      <option>Exam 3</option>
+    </select>
+
+    <button (click)="onSubmit()">Confirm</button>
+</div>
