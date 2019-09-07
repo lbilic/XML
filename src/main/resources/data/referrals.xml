@@ -4,7 +4,7 @@
             <referral:receiver>Dom Zdravlja</referral:receiver>
             <referral:sender>Dom Zdravlja</referral:sender>
         </referral:health_institution>
-        <referral:insured_person href="http://www.zis.rs/charts/id81" rel="voc:osiguranoLice" referral:identifier="http://www.zis.rs/charts/id81"/>
+        <referral:insured_person href="http://www.zis.rs/charts/id81" rel="voc:insuredPerson" referral:identifier="http://www.zis.rs/charts/id81"/>
         <referral:opinion>
             Na osnovu reporta
             <referral:link href="http://www.zis.rs/reports/id88" identifier="http://www.zis.rs/reports/id88" rel="voc:referencaNaDokument"/>
