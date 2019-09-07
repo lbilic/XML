@@ -1,0 +1,33 @@
+<header>
+  <div id="container">
+    <h1>ZIS</h1>
+  </div>
+  <ul>
+      <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="/patient/chooseDoctor" routerLinkActive="active">Choose Doctor</a></li>
+      <li><a routerLink="/patient/scheduleExam" routerLinkActive="active">Schedule Exam</a></li>
+      <li><a routerLink="/patient/medicalRecord" routerLinkActive="active">My Medical Record</a></li>
+      <li><a routerLink="/patient/notifications" routerLinkActive="active">Notifications</a></li>
+      
+      
+      <li *ngIf='userLogged !== null'><a *ngIf="userLogged.role === 'ROLE_ADMIN'" routerLink="/administration" routerLinkActive="active" id="header-administration-btn">Administration</a></li>
+      
+
+
+      <li style="float:right">
+        <a *ngIf="!userLogged" routerLink="/login" routerLinkActive="active">
+          Login
+        </a>
+        <a *ngIf="userLogged" (click)="userService.logout()">
+          Logout
+        </a>
+      </li>
+
+      
+      <li style="float: right; margin-right: 20px;">
+        <a *ngIf="userLogged">
+          {{userService.currentUserValue.username}}
+        </a>
+      </li>
+  </ul>
+</header>
