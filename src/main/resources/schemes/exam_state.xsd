@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+           targetNamespace="http://www.zis.rs/xml/schemes/exam_state"
+>
+
+    <xs:element name="exam_state">
+        <xs:complexType>
+            <xs:attribute name="patient" type="xs:anyURI" use="required"/>
+            <xs:attribute name="state" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="scheduling"/>
+                        <xs:enumeration value="waiting"/>
+                        <xs:enumeration value="exam_changed"/>
+                        <xs:enumeration value="exam_doctor_gen"/>
+                        <xs:enumeration value="exam_doctor_spec"/>
+                        <xs:enumeration value="end"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="date" type="xs:dateTime" use="required"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

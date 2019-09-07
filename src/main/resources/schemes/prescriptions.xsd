@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified"
+    vc:minVersion="1.1" targetNamespace="http://www.zis.rs/xml/schemes/prescriptions"
+    xmlns="http://www.zis.rs/xml/schemes/prescriptions" xmlns:prescription="http://www.zis.rs/xml/schemes/prescription">
+
+    <xs:import namespace="http://www.zis.rs/xml/schemes/prescription" schemaLocation="prescription.xsd"/>
+    <xs:element name="prescriptions">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="prescription:prescription"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,12 @@
+<prescriptions:prescriptions xmlns:prescriptions="http://www.zis.rs/xml/schemes/prescriptions" xmlns:prescription="http://www.zis.rs/xml/schemes/prescription">
+    <prescription:prescription about="http://www.zis.rs/prescriptions/id87" active="true" id="http://www.zis.rs/prescriptions/id87" oznaka="lr1">
+        <prescription:health_institution_name>Dom Zdravlja</prescription:health_institution_name>
+        <prescription:insured_person href="http://www.zis.rs/charts/id81" prescription:identifier="http://www.zis.rs/charts/id81" rel="voc:insuredPerson"/>
+        <prescription:participation_release_reason>512</prescription:participation_release_reason>
+        <prescription:date datatype="xs:date" property="voc:date">2019-06-21</prescription:date>
+        <prescription:diagnosis>6248</prescription:diagnosis>
+        <prescription:description>Brufen 2x1</prescription:description>
+        <prescription:prdescriptionani_drug href="http://www.zis.rs/drugs/id1" prescription:identifier="http://www.zis.rs/drugs/id1" rel="voc:drug"/>
+        <prescription:doctor href="http://www.zis.rs/doctors/id67" prescription:identifier="http://www.zis.rs/doctors/id67" rel="voc:doctor"/>
+    </prescription:prescription>
+</prescriptions:prescriptions>

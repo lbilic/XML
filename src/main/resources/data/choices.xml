@@ -1,0 +1,11 @@
+<choices:choices xmlns:choice="http://www.zis.rs/xml/schemes/choice" xmlns:choices="http://www.zis.rs/xml/schemes/choices">
+    <choice:choice about="http://www.zis.rs/choices/id97" active="true" id="http://www.zis.rs/choices/id97" label="ipl1">
+        <choice:institution_name>Dom zdravlja</choice:institution_name>
+        <choice:form_type>choice</choice:form_type>
+        <choice:reason_for_change datatype="xs:string" property="voc:reasonForChange">ne_radi</choice:reason_for_change>
+        <choice:previous_doctor href="http://www.zis.rs/doctors/id77" choice:identifier="http://www.zis.rs/doctors/id77" rel="voc:previousDoctor"/>
+        <choice:doctor href="http://www.zis.rs/doctors/id67" choice:identifier="http://www.zis.rs/doctors/id67" rel="voc:doctor"/>
+        <choice:insured_person href="http://www.zis.rs/charts/id92" choice:identifier="http://www.zis.rs/charts/id92" rel="voc:insuredPerson"/>
+        <choice:date datatype="xs:date" property="voc:date">2019-06-04</choice:date>
+    </choice:choice>
+</choices:choices>

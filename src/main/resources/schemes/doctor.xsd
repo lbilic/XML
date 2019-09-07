@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://www.zis.rs/xml/schemes/doctor" vc:minVersion="1.1"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+    xmlns:doctor="http://www.zis.rs/xml/schemes/doctor">
+    <xs:element name="doctor">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="user">
+                    <xs:complexType>
+                        <xs:attribute ref="doctor:identifier" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element default="generalist" name="type">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="doctor:type">
+                                <xs:anyAttribute processContents="lax"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="health_care_area" default="adults">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="doctor:health_care_area">
+                                <xs:anyAttribute processContents="lax"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:anyURI" use="required"/>
+            <xs:anyAttribute processContents="lax"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="generalist"/>
+            <xs:enumeration value="gynecologist"/>
+            <xs:enumeration value="pediatrician"/>
+            <xs:enumeration value="dermatologist"/>
+            <xs:enumeration value="dentist"/>
+            <xs:enumeration value="other"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="health_care_area">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="children"/>
+            <xs:enumeration value="adults"/>
+            <xs:enumeration value="women"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:attribute name="identifier" type="xs:anyURI"/>
+</xs:schema>

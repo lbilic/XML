@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified"
+    vc:minVersion="1.1" targetNamespace="http://www.zis.rs/xml/schemes/referral"
+    xmlns:referral="http://www.zis.rs/xml/schemes/referral">
+    <xs:element name="referral">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="health_institution">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="receiver" type="xs:string"/>
+                            <xs:element name="sender" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="insured_person">
+                    <xs:complexType>
+                        <xs:attribute ref="referral:identifier" use="required"/>
+                        <xs:anyAttribute processContents="lax"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="opinion">
+                    <xs:complexType mixed="true">
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="link">
+                                <xs:complexType>
+                                    <xs:attribute name="identifier" type="xs:anyURI"
+                                        use="required"/>
+                                    <xs:anyAttribute processContents="lax"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="doctor">
+                    <xs:complexType>
+                        <xs:attribute ref="referral:identifier" use="required"/>
+                        <xs:anyAttribute processContents="lax"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="date">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:date">
+                                <xs:anyAttribute processContents="lax"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="specialist">
+                    <xs:complexType>
+                        <xs:attribute ref="referral:identifier" use="required"/>
+                        <xs:anyAttribute processContents="lax"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="label" type="xs:string" fixed="oz2" use="required"/>
+            <xs:attribute name="id" type="xs:anyURI" use="required"/>
+            <xs:attribute name="active" type="xs:boolean" use="required"/>
+            <xs:anyAttribute processContents="lax"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:attribute name="identifier" type="xs:anyURI"/>
+</xs:schema>

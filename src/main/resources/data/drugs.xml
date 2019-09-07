@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<drugs:drugs
+        xmlns:drugs="http://www.zis.rs/xml/schemes/drugs"
+        xmlns:drug="http://www.zis.rs/xml/schemes/drug">
+    <drug:drug id="http://www.zis.rs/drugs/id1" active="true">
+        <drug:name>ACIKLOVIR</drug:name>
+        <drug:code>1328230</drug:code>
+        <drug:diagnosis>B005</drug:diagnosis>
+        <drug:purpose>Bolest oka uzrokovana herpesvirusom</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id2" active="true">
+        <drug:name>ACTAPAX</drug:name>
+        <drug:code>1072915</drug:code>
+        <drug:diagnosis>F411</drug:diagnosis>
+        <drug:purpose>Anksiozni generalizovani poremećaj</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id3" active="true">
+        <drug:name>ACTAPAX</drug:name>
+        <drug:code>1072916</drug:code>
+        <drug:diagnosis>F320</drug:diagnosis>
+        <drug:purpose>Blaga depresijska epizoda</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id4" active="true">
+        <drug:name>ACTEMRA</drug:name>
+        <drug:code>0014401</drug:code>
+        <drug:diagnosis>M051</drug:diagnosis>
+        <drug:purpose>Reumatoidno oboljene pluća</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id5" active="true">
+        <drug:name>ACTEMRA</drug:name>
+        <drug:code>0014401</drug:code>
+        <drug:diagnosis>M052</drug:diagnosis>
+        <drug:purpose>Reumatoidno zapaljenje krvnih sudova</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id6" active="true">
+        <drug:name>ACTEMRA</drug:name>
+        <drug:code>0014401</drug:code>
+        <drug:diagnosis>M06</drug:diagnosis>
+        <drug:purpose>Ostali reumatoidni artritisi</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id7" active="true">
+        <drug:name>ACTEMBA</drug:name>
+        <drug:code>0014402</drug:code>
+        <drug:diagnosis>M064</drug:diagnosis>
+        <drug:purpose>Zapaljensko oboljenje više zglobova</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id8" active="true">
+        <drug:name>ADVAGRAF</drug:name>
+        <drug:code>1014244</drug:code>
+        <drug:diagnosis>Z941</drug:diagnosis>
+        <drug:purpose>state presađenog srca</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id9" active="true">
+        <drug:name>ADVAGRAF</drug:name>
+        <drug:code>1014244</drug:code>
+        <drug:diagnosis>Z942</drug:diagnosis>
+        <drug:purpose>state presađenih pluća</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id10" active="true">
+        <drug:name>ADVAGRAF</drug:name>
+        <drug:code>1014244</drug:code>
+        <drug:diagnosis>Z947</drug:diagnosis>
+        <drug:purpose>state presađene rožnjače</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id11" active="true">
+        <drug:name>AZITROMICIN SANDOZ</drug:name>
+        <drug:code>3325572</drug:code>
+        <drug:diagnosis>J20</drug:diagnosis>
+        <drug:purpose>Akutni bronhitis</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id12" active="true">
+        <drug:name>AZITROMICIN SANDOZ</drug:name>
+        <drug:code>3325572</drug:code>
+        <drug:diagnosis>J203</drug:diagnosis>
+        <drug:purpose>Akutni bronhitis, uzročnik Coxsackie virus</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id13" active="true">
+        <drug:name>AZITROMICIN SANDOZ</drug:name>
+        <drug:code>3325572</drug:code>
+        <drug:diagnosis>J204</drug:diagnosis>
+        <drug:purpose>Akutni bronhitis uzrokovan virusom parainfluence</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id14" active="true">
+        <drug:name>AZITROMICIN SANDOZ</drug:name>
+        <drug:code>3325572</drug:code>
+        <drug:diagnosis>J208</drug:diagnosis>
+        <drug:purpose>Akutni bronhitis uzrokovan drugim označenim mikroorganizmima</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id15" active="true">
+        <drug:name>BERODUAL</drug:name>
+        <drug:code>7114129</drug:code>
+        <drug:diagnosis>J45</drug:diagnosis>
+        <drug:purpose>Astma</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id16" active="true">
+        <drug:name>CALIXTA</drug:name>
+        <drug:code>1072705</drug:code>
+        <drug:diagnosis>F32</drug:diagnosis>
+        <drug:purpose>Depresija-depresijsko duševno oboljenje</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id17" active="true">
+        <drug:name>CALIXTA</drug:name>
+        <drug:code>1072705</drug:code>
+        <drug:diagnosis>F332</drug:diagnosis>
+        <drug:purpose>Težak povratan depresijski poremećaj bez simptoma psihoze</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id18" active="true">
+        <drug:name>CALIXTA</drug:name>
+        <drug:code>1072705</drug:code>
+        <drug:diagnosis>F333</drug:diagnosis>
+        <drug:purpose>Težak povratan depresijski poremećaj sa simptomima psihoze</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id19" active="true">
+        <drug:name>CARDIPINE</drug:name>
+        <drug:code>1402001</drug:code>
+        <drug:diagnosis>I10</drug:diagnosis>
+        <drug:purpose>Povišen krvni pritisak nepoznatog porekla</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id20" active="true">
+        <drug:name>CARDIPINE</drug:name>
+        <drug:code>1402001</drug:code>
+        <drug:diagnosis>I15</drug:diagnosis>
+        <drug:purpose>Sekundarno povišen krvni pritisak</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id21" active="true">
+        <drug:name>CEFEXIN</drug:name>
+        <drug:code>1321627</drug:code>
+        <drug:diagnosis>J20</drug:diagnosis>
+        <drug:purpose>Akutni bronhitis</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id22" active="true">
+        <drug:name>CEFEXIN</drug:name>
+        <drug:code>1321627</drug:code>
+        <drug:diagnosis>J203</drug:diagnosis>
+        <drug:purpose>Akutni bronhitis, uzročnik Coxsackie virus</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id23" active="true">
+        <drug:name>CEFEXIN</drug:name>
+        <drug:code>1321627</drug:code>
+        <drug:diagnosis>J204</drug:diagnosis>
+        <drug:purpose>Akutni bronhitis uzrokovan virusom parainfluence</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id24" active="true">
+        <drug:name>CEFEXIN</drug:name>
+        <drug:code>1321627</drug:code>
+        <drug:diagnosis>J208</drug:diagnosis>
+        <drug:purpose>Akutni bronhitis uzrokovan drugim označenim mikroorganizmima</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id25" active="true">
+        <drug:name>CEFEXIN</drug:name>
+        <drug:code>1321627</drug:code>
+        <drug:diagnosis>J32</drug:diagnosis>
+        <drug:purpose>Hronično zapaljenje sinusa</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id26" active="true">
+        <drug:name>CEFZIL</drug:name>
+        <drug:code>3321951</drug:code>
+        <drug:diagnosis>J13</drug:diagnosis>
+        <drug:purpose>Zapaljenje pluća uzrokovano Streptococcusom pneumoniae(Pneumococcus)</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id27" active="true">
+        <drug:name>CEFZIL</drug:name>
+        <drug:code>3321951</drug:code>
+        <drug:diagnosis>J14</drug:diagnosis>
+        <drug:purpose>Zapaljenje pluća uzrokovano Haemonophilusom influence</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id28" active="true">
+        <drug:name>CEFZIL</drug:name>
+        <drug:code>3321951</drug:code>
+        <drug:diagnosis>J151</drug:diagnosis>
+        <drug:purpose>Zapaljenje pluća uzrokovano Pseudomonasom</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id29" active="true">
+        <drug:name>CEFZIL</drug:name>
+        <drug:code>3321951</drug:code>
+        <drug:diagnosis>J152</drug:diagnosis>
+        <drug:purpose>Stafilokokno zapaljenje pluća</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id30" active="true">
+        <drug:name>CEFZIL</drug:name>
+        <drug:code>3321951</drug:code>
+        <drug:diagnosis>J155</drug:diagnosis>
+        <drug:purpose>Zapaljenje pluća uzrokovano Pseudomonasom</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id31" active="true">
+        <drug:name>CEROXIM</drug:name>
+        <drug:code>1321976</drug:code>
+        <drug:diagnosis>J20</drug:diagnosis>
+        <drug:purpose>Akutni bronhitis</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id32" active="true">
+        <drug:name>CEROXIM</drug:name>
+        <drug:code>1321976</drug:code>
+        <drug:diagnosis>J203</drug:diagnosis>
+        <drug:purpose>Akutni bronhitis, uzročnik Coxsackie virus</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id33" active="true">
+        <drug:name>CEFEXIN</drug:name>
+        <drug:code>1321976</drug:code>
+        <drug:diagnosis>J204</drug:diagnosis>
+        <drug:purpose>Akutni bronhitis uzrokovan virusom parainfluence</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id34" active="true">
+        <drug:name>CEROXIM</drug:name>
+        <drug:code>1321976</drug:code>
+        <drug:diagnosis>J208</drug:diagnosis>
+        <drug:purpose>Akutni bronhitis uzrokovan drugim označenim mikroorganizmima</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id35" active="true">
+        <drug:name>CEROXIM</drug:name>
+        <drug:code>1321977</drug:code>
+        <drug:diagnosis>L04</drug:diagnosis>
+        <drug:purpose>Akutno zapaljenje limfnog čvora</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id36" active="true">
+        <drug:name>CIPRALEX</drug:name>
+        <drug:code>1072613</drug:code>
+        <drug:diagnosis>F320</drug:diagnosis>
+        <drug:purpose>Blaga depresijska epizoda</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id37" active="true">
+        <drug:name>CIPRALEX</drug:name>
+        <drug:code>1072613</drug:code>
+        <drug:diagnosis>F322</drug:diagnosis>
+        <drug:purpose>Teška depresijska epizoda bez simptoma psihoze</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id38" active="true">
+        <drug:name>CIPRALEX</drug:name>
+        <drug:code>1072613</drug:code>
+        <drug:diagnosis>F323</drug:diagnosis>
+        <drug:purpose>Teška depresijska epizoda sa simptomima psihoze</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id39" active="true">
+        <drug:name>ERITROMICIN</drug:name>
+        <drug:code>1325551</drug:code>
+        <drug:diagnosis>J32</drug:diagnosis>
+        <drug:purpose>Hronično zapaljenje sinusa</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id40" active="true">
+        <drug:name>ERITROMICIN</drug:name>
+        <drug:code>1325551</drug:code>
+        <drug:diagnosis>J42</drug:diagnosis>
+        <drug:purpose>Hronični bronhitis</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id41" active="true">
+        <drug:name>ERITROMICIN</drug:name>
+        <drug:code>1325551</drug:code>
+        <drug:diagnosis>Y400</drug:diagnosis>
+        <drug:purpose>Penicilini</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id42" active="true">
+        <drug:name>ERITROMICIN</drug:name>
+        <drug:code>1325551</drug:code>
+        <drug:diagnosis>A481</drug:diagnosis>
+        <drug:purpose>Legioneloza</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id43" active="true">
+        <drug:name>ERITROMICIN</drug:name>
+        <drug:code>1325552</drug:code>
+        <drug:diagnosis>J03</drug:diagnosis>
+        <drug:purpose>Akutno zapaljenje endnika</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id44" active="true">
+        <drug:name>HEMOMYCIN</drug:name>
+        <drug:code>3325481</drug:code>
+        <drug:diagnosis>J03</drug:diagnosis>
+        <drug:purpose>Akutno zapaljenje endnika</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id45" active="true">
+        <drug:name>PANCEF</drug:name>
+        <drug:code>1321622</drug:code>
+        <drug:diagnosis>J20</drug:diagnosis>
+        <drug:purpose>Akutni bronhitis</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id46" active="true">
+        <drug:name>PANCEF</drug:name>
+        <drug:code>1321622</drug:code>
+        <drug:diagnosis>J203</drug:diagnosis>
+        <drug:purpose>Akutni bronhitis, uzročnik Coxsackie virus</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id47" active="true">
+        <drug:name>PANCEF</drug:name>
+        <drug:code>1321622</drug:code>
+        <drug:diagnosis>J204</drug:diagnosis>
+        <drug:purpose>Akutni bronhitis uzrokovan virusom parainfluence</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id48" active="true">
+        <drug:name>PANCEF</drug:name>
+        <drug:code>1321622</drug:code>
+        <drug:diagnosis>J208</drug:diagnosis>
+        <drug:purpose>Akutni bronhitis uzrokovan drugim označenim mikroorganizmima</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id49" active="true">
+        <drug:name>PANCEF</drug:name>
+        <drug:code>1321622</drug:code>
+        <drug:diagnosis>J32</drug:diagnosis>
+        <drug:purpose>Hronično zapaljenje sinusa</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id50" active="true">
+        <drug:name>PANKLAV</drug:name>
+        <drug:code>3021602</drug:code>
+        <drug:diagnosis>J32</drug:diagnosis>
+        <drug:purpose>Hronično zapaljenje sinusa</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id51" active="true">
+        <drug:name>PANKLAV</drug:name>
+        <drug:code>3021602</drug:code>
+        <drug:diagnosis>J20</drug:diagnosis>
+        <drug:purpose>Akutni bronhitis</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id52" active="true">
+        <drug:name>PANKLAV</drug:name>
+        <drug:code>3021602</drug:code>
+        <drug:diagnosis>J203</drug:diagnosis>
+        <drug:purpose>Akutni bronhitis, uzročnik Coxsackie virus</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id53" active="true">
+        <drug:name>PANKLAV</drug:name>
+        <drug:code>3021602</drug:code>
+        <drug:diagnosis>J204</drug:diagnosis>
+        <drug:purpose>Akutni bronhitis uzrokovan virusom parainfluence</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id54" active="true">
+        <drug:name>PANKLAV</drug:name>
+        <drug:code>3021602</drug:code>
+        <drug:diagnosis>J208</drug:diagnosis>
+        <drug:purpose>Akutni bronhitis uzrokovan drugim označenim mikroorganizmima</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id55" active="true">
+        <drug:name>PANKLAV</drug:name>
+        <drug:code>3021602</drug:code>
+        <drug:diagnosis>J02</drug:diagnosis>
+        <drug:purpose>Akutno zapaljenje ždrela</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id56" active="true">
+        <drug:name>PAROKSETIN PHARMAS</drug:name>
+        <drug:code>1072907</drug:code>
+        <drug:diagnosis>F411</drug:diagnosis>
+        <drug:purpose>Anksiozni generalizovani poremećaj</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id57" active="true">
+        <drug:name>PAROKSETIN PHARMAS</drug:name>
+        <drug:code>1072907</drug:code>
+        <drug:diagnosis>F411</drug:diagnosis>
+        <drug:purpose>Anksiozni generalizovani poremećaj</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id58" active="true">
+        <drug:name>LOFOCIN</drug:name>
+        <drug:code>1329381</drug:code>
+        <drug:diagnosis>J01</drug:diagnosis>
+        <drug:purpose>Akutno zapaljenje sinusa</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id59" active="true">
+        <drug:name>LOFOCIN</drug:name>
+        <drug:code>1329381</drug:code>
+        <drug:diagnosis>J151</drug:diagnosis>
+        <drug:purpose>Zapaljenje pluća uzrokovano Pseudomonasom</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id60" active="true">
+        <drug:name>LOFOCIN</drug:name>
+        <drug:code>1329381</drug:code>
+        <drug:diagnosis>J155</drug:diagnosis>
+        <drug:purpose>Zapaljenje pluća uzrokovano Ešerihijom koli</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id61" active="true">
+        <drug:name>LOFOCIN</drug:name>
+        <drug:code>1329381</drug:code>
+        <drug:diagnosis>J156</drug:diagnosis>
+        <drug:purpose>Zapaljenje pluća uzrokovano aerobnim Gram-negativnim bakterijama</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id62" active="true">
+        <drug:name>LOFOCIN</drug:name>
+        <drug:code>1329381</drug:code>
+        <drug:diagnosis>J157</drug:diagnosis>
+        <drug:purpose>Zapaljenje pluća uzrokovano Mikroplaymom pneumonije</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id63" active="true">
+        <drug:name>PARACETAMOL</drug:name>
+        <drug:code>3086695</drug:code>
+        <drug:diagnosis>J10</drug:diagnosis>
+        <drug:purpose>Analgetik i antypeiretik</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id64" active="true">
+        <drug:name>BRUFEN</drug:name>
+        <drug:code>3162089</drug:code>
+        <drug:diagnosis>J10</drug:diagnosis>
+        <drug:purpose>Analgetik i antypeiretik</drug:purpose>
+    </drug:drug>
+    <drug:drug id="http://www.zis.rs/drugs/id65" active="true">
+        <drug:name>KLACID</drug:name>
+        <drug:code>2325625</drug:code>
+        <drug:diagnosis>J02</drug:diagnosis>
+        <drug:purpose>Akutno zapaljenje ždrela</drug:purpose>
+    </drug:drug>
+</drugs:drugs>

@@ -1,0 +1,56 @@
+<zd:charts xmlns:zd="http://www.zis.rs/xml/schemes/charts" xmlns:zko="http://www.zis.rs/xml/schemes/chart">
+    <zko:chart about="http://www.zis.rs/charts/id81" active="true" chart_number="AA725" number_zdr_knjizice="02005550770" id="http://www.zis.rs/charts/id81" jmbg="0055070707700" lbo="70550777700" typeof="voc:Chart" warning="">
+        <zko:insured_person zko:identifier="http://www.zis.rs/users/id80">
+            <zko:name about="http://www.zis.rs/charts/id81" datatype="xs:string" property="voc:name">Goran</zko:name>
+            <zko:surname about="http://www.zis.rs/charts/id81" datatype="xs:string" property="voc:surname">Obradovic</zko:surname>
+            <zko:sex about="http://www.zis.rs/charts/id81" datatype="xs:string" property="voc:sex">muski</zko:sex>
+            <zko:insurance_carrier>
+                <zko:name>Marija</zko:name>
+                <zko:surname>Marinkovic</zko:surname>
+                <zko:relation>majka</zko:relation>
+                <zko:osnova_osiguranja>50</zko:osnova_osiguranja>
+            </zko:insurance_carrier>
+            <zko:marital_status>neozenjen/neudata</zko:marital_status>
+            <zko:birth_date about="http://www.zis.rs/charts/id81" datatype="xs:date" property="voc:birth_date">2006-05-04</zko:birth_date>
+            <zko:address about="http://www.zis.rs/charts/id81" href="http://www.zis.rs/address/Rumenicka/23/5/Apatin" rel="voc:stanuje">
+                <zko:street about="http://www.zis.rs/address/Rumenicka/23/5/Apatin" datatype="xs:string" property="voc:street">Rumenicka</zko:street>
+                <zko:number about="http://www.zis.rs/address/Rumenicka/23/5/Apatin" datatype="xs:integer" property="voc:number">23</zko:number>
+                <zko:appartment_number about="http://www.zis.rs/address/Rumenicka/23/5/Apatin" datatype="xs:integer" property="voc:numberStana">5</zko:appartment_number>
+                <zko:town about="http://www.zis.rs/address/Rumenicka/23/5/Apatin" datatype="xs:string" property="voc:town">Apatin</zko:town>
+                <zko:municipality about="http://www.zis.rs/address/Rumenicka/23/5/Apatin" href="http://www.zis.rs/municipality/Apatin/24510" rel="voc:municipality">
+                    <zko:name about="http://www.zis.rs/municipality/Apatin/24510" datatype="xs:string" property="voc:municipalityName">Apatin</zko:name>
+                    <zko:zip_code about="http://www.zis.rs/municipality/Apatin/24510" datatype="xs:integer" property="voc:postanskinumber">24510</zko:zip_code>
+                </zko:municipality>
+            </zko:address>
+            <zko:phone_number>0123456789</zko:phone_number>
+        </zko:insured_person>
+        <zko:chosen_doctor href="http://www.zis.rs/doctors/id67" rel="voc:chosenDoctor" zko:identifier="http://www.zis.rs/doctors/id67"/>
+    </zko:chart>
+    <zko:chart about="http://www.zis.rs/charts/id92" active="true" chart_number="AA333" number_zdr_knjizice="02335550770" id="http://www.zis.rs/charts/id92" jmbg="2105997707700" lbo="73553777337" typeof="voc:Chart" warning="ACTAPAX">
+        <zko:insured_person zko:identifier="http://www.zis.rs/users/id91">
+            <zko:name about="http://www.zis.rs/charts/id92" datatype="xs:string" property="voc:name">Nikolina</zko:name>
+            <zko:surname about="http://www.zis.rs/charts/id92" datatype="xs:string" property="voc:surname">Blagojevic</zko:surname>
+            <zko:sex about="http://www.zis.rs/charts/id92" datatype="xs:string" property="voc:sex">zenski</zko:sex>
+            <zko:insurance_carrier>
+                <zko:name>Stanko</zko:name>
+                <zko:surname>Blagojevic</zko:surname>
+                <zko:relation>otac</zko:relation>
+                <zko:osnova_osiguranja>50</zko:osnova_osiguranja>
+            </zko:insurance_carrier>
+            <zko:marital_status>neozenjen/neudata</zko:marital_status>
+            <zko:birth_date about="http://www.zis.rs/charts/id92" datatype="xs:date" property="voc:birth_date">1997-05-04</zko:birth_date>
+            <zko:address about="http://www.zis.rs/charts/id92" href="http://www.zis.rs/address/Sterijina/36/1/Kragujevac" rel="voc:stanuje">
+                <zko:street about="http://www.zis.rs/address/Sterijina/36/1/Kragujevac" datatype="xs:string" property="voc:street">Sterijina</zko:street>
+                <zko:number about="http://www.zis.rs/address/Sterijina/36/1/Kragujevac" datatype="xs:integer" property="voc:number">36</zko:number>
+                <zko:appartment_number about="http://www.zis.rs/address/Sterijina/36/1/Kragujevac" datatype="xs:integer" property="voc:numberStana">1</zko:appartment_number>
+                <zko:town about="http://www.zis.rs/address/Sterijina/36/1/Kragujevac" datatype="xs:string" property="voc:town">Kragujevac</zko:town>
+                <zko:municipality about="http://www.zis.rs/address/Sterijina/36/1/Kragujevac" href="http://www.zis.rs/municipality/Kragujevac/34530" rel="voc:municipality">
+                    <zko:name about="http://www.zis.rs/municipality/Kragujevac/34530" datatype="xs:string" property="voc:municipalityName">Kragujevac</zko:name>
+                    <zko:zip_code about="http://www.zis.rs/municipality/Kragujevac/34530" datatype="xs:integer" property="voc:postanskinumber">34530</zko:zip_code>
+                </zko:municipality>
+            </zko:address>
+            <zko:phone_number>0123456789</zko:phone_number>
+        </zko:insured_person>
+        <zko:chosen_doctor href="http://www.zis.rs/doctors/id67" rel="voc:chosenDoctor" zko:identifier="http://www.zis.rs/doctors/id67"/>
+    </zko:chart>
+</zd:charts>

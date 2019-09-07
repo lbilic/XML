@@ -1,0 +1,27 @@
+<pr:exams xmlns:pr="http://www.zis.rs/xml/schemes/exams" xmlns:exam="http://www.zis.rs/xml/schemes/exam">
+    <ex:exam xmlns:ex="http://www.zis.rs/xml/schemes/exam" aktivan="true" id="http://www.zis.rs/exams/id86" type="general_practice">
+        <ex:doctor ex:identifier="http://www.zis.rs/doctors/id67"/>
+        <ex:date>2021-05-22T02:00:00</ex:date>
+        <ex:pacijent ex:identifier="http://www.zis.rs/charts/id81"/>
+    </ex:exam>
+    <ex:exam xmlns:ex="http://www.zis.rs/xml/schemes/exam" aktivan="true" id="http://www.zis.rs/exams/id89" type="general_practice">
+        <ex:doctor ex:identifier="http://www.zis.rs/doctors/id67"/>
+        <ex:date>2021-05-23T02:00:00</ex:date>
+        <ex:pacijent ex:identifier="http://www.zis.rs/charts/id81"/>
+    </ex:exam>
+    <ex:exam xmlns:ex="http://www.zis.rs/xml/schemes/exam" aktivan="true" id="http://www.zis.rs/exams/id92" type="specialist">
+        <ex:doctor ex:identifier="http://www.zis.rs/doctors/id71"/>
+        <ex:date>2021-07-17T02:00:00</ex:date>
+        <ex:pacijent ex:identifier="http://www.zis.rs/charts/id81"/>
+    </ex:exam>
+    <ex:exam xmlns:ex="http://www.zis.rs/xml/schemes/exam" aktivan="true" id="http://www.zis.rs/exams/id94" type="general_practice">
+        <ex:doctor ex:identifier="http://www.zis.rs/doctors/id67"/>
+        <ex:date>2021-07-25T02:00:00</ex:date>
+        <ex:pacijent ex:identifier="http://www.zis.rs/charts/id81"/>
+    </ex:exam>
+    <ex:exam xmlns:ex="http://www.zis.rs/xml/schemes/exam" aktivan="true" id="http://www.zis.rs/exams/id97" type="general_practice">
+        <ex:doctor ex:identifier="http://www.zis.rs/doctors/id67"/>
+        <ex:date>2021-08-22T02:00:00</ex:date>
+        <ex:pacijent ex:identifier="http://www.zis.rs/charts/id81"/>
+    </ex:exam>
+</pr:exams>

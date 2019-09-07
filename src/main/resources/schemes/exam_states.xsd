@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified"
+           vc:minVersion="1.1" targetNamespace="http://www.zis.rs/xml/schemes/exam_state"
+           xmlns:stp="http://www.zis.rs/xml/schemes/exam_state">
+
+    <xs:import namespace="http://www.zis.rs/xml/schemes/exam_state"
+               schemaLocation="exam_state.xsd"/>
+    <xs:element name="exam_state">
+        <xs:complexType>
+            <xs:sequence >
+                <xs:element  maxOccurs="unbounded" minOccurs="0" ref="exs:exam_state"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

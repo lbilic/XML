@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://www.zis.rs/xml/schemes/choice" vc:minVersion="1.1"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+    xmlns:choice="http://www.zis.rs/xml/schemes/choice">
+    <xs:element name="choice">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="institution_name" type="xs:string"/>
+                <xs:element name="form_type" default="choice">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="choice"/>
+                            <xs:enumeration value="promena"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element default="not_working" name="reason_for_change">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="choice:reason_for_change_options">
+                                <xs:anyAttribute processContents="lax"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="previous_doctor">
+                    <xs:complexType>
+                        <xs:attribute ref="choice:identifier" use="required"/>
+                        <xs:anyAttribute processContents="lax"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="doctor">
+                    <xs:complexType>
+                        <xs:attribute ref="choice:identifier" use="required"/>
+                        <xs:anyAttribute processContents="lax"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="insured_person">
+                    <xs:complexType>
+                        <xs:attribute ref="choice:identifier" use="required"/>
+                        <xs:anyAttribute processContents="lax"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="date">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:date">
+                                <xs:anyAttribute processContents="lax"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute fixed="ipl1" name="oznaka" type="xs:string" use="required"/>
+            <xs:attribute name="id" type="xs:anyURI" use="required"/>
+            <xs:attribute name="active" type="xs:boolean" use="required"/>
+            <xs:anyAttribute processContents="lax"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="reason_for_change_options">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="not_working"/>
+            <xs:enumeration value="moved"/>
+            <xs:enumeration value="dissatisfied"/>
+            <xs:enumeration value="absent"/>
+            <xs:enumeration value="misunderstanding"/>
+            <xs:enumeration value="other"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:attribute name="identifier" type="xs:anyURI"/>
+</xs:schema>

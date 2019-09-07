@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xml:base="http://www.zis.rs/rdf/voc#" >
+    
+    <rdfs:Class rdf:ID="Person">
+        <rdfs:label xml:lang="sr">Person</rdfs:label>
+        <rdfs:comment xml:lang="sr">Predstavlja osobu u zdrastvenom sistemu</rdfs:comment>
+    </rdfs:Class>
+    
+    <rdfs:Class rdf:ID="Doctor">
+        <rdfs:subClassOf rdf:resource="#Person"/>
+        <rdfs:label xml:lang="sr">doctor</rdfs:label>
+        <rdfs:comment xml:lang="sr">Predstavlja doctora u zdrastvenom sistemu</rdfs:comment>
+    </rdfs:Class>
+    
+    <rdfs:Class rdf:ID="InsuredPerson">
+        <rdfs:subClassOf rdf:resource="#Person"/>
+        <rdfs:label xml:lang="sr">Osigurano lice</rdfs:label>
+        <rdfs:comment>Predstavlja osigurano lice (pacijenta) u zdrastvenom sistemu</rdfs:comment>
+    </rdfs:Class>
+    
+    <rdfs:Class rdf:ID="Drug">
+        <rdfs:label xml:lang="sr">Lek</rdfs:label>
+        <rdfs:comment xml:lang="sr">Predstavlja drug u zdrastvenom sistemu</rdfs:comment>
+    </rdfs:Class>
+    
+    <rdfs:Class rdf:ID="Address">
+        <rdfs:label xml:lang="sr">Adresa</rdfs:label>
+        <rdfs:comment xml:lang="sr">Predstavlja adresu osiguranog lica ili zdrastvene ustanove</rdfs:comment>
+    </rdfs:Class>
+    
+    <rdfs:Class rdf:ID="Municipality">
+        <rdfs:label xml:lang="sr">Opstina</rdfs:label>
+        <rdfs:comment xml:lang="sr">Predstavlja opstinu u kojem se boravi osigurano lice</rdfs:comment>
+    </rdfs:Class>
+    
+    <rdfs:Class rdf:ID="Document">
+        <rdfs:label xml:lang="sr">Dokument</rdfs:label>
+        <rdfs:comment xml:lang="sr">Predstavlja dokument u zdrastvenom sistemu</rdfs:comment>
+    </rdfs:Class>
+    
+    <rdfs:Class rdf:ID="Chart">
+        <rdfs:subClassOf rdf:resource="#Document"/>
+        <rdfs:label xml:lang="sr">Zdrastveni karton</rdfs:label>
+        <rdfs:comment xml:lang="sr">Predstavlja type dokumenta u zdrastvenom sistemu u kojem se nalaze
+        licni podaci o pacijentu i njegovom zdrastvenom stanju</rdfs:comment>
+    </rdfs:Class>
+    
+    <rdfs:Class rdf:ID="LabReferral">
+        <rdfs:subClassOf rdf:resource="#Document"/>
+        <rdfs:label xml:lang="sr">Upustvo za laboratoriju</rdfs:label>
+        <rdfs:comment xml:lang="sr">Predstavlja dokument u zdrastvenom sistemu u kojem se nalaze
+            podaci za laboratorijski exam</rdfs:comment>
+    </rdfs:Class>
+    
+    
+    <rdfs:Class rdf:ID="choicedoctora">
+        <rdfs:subClassOf rdf:resource="#Document"/>
+        <rdfs:label xml:lang="sr">choice doctora</rdfs:label>
+        <rdfs:comment xml:lang="sr">Predstavlja dokument u zdrastvenom sistemu u kojem pacijent 
+            zahteva da promenu vec odabranog doctora opste prakse ili choice doctora ukoliko
+            nema izabranog doctora</rdfs:comment>
+    </rdfs:Class>
+    
+    <rdfs:Class rdf:ID="reportdoctora">
+        <rdfs:subClassOf rdf:resource="#Document"/>
+        <rdfs:label xml:lang="sr">report doctora</rdfs:label>
+        <rdfs:comment xml:lang="sr">Predstavlja dokument u zdrastvenom sistemu sa podacima o 
+            zdrastvenom stanju i examu pacijenta</rdfs:comment>
+    </rdfs:Class>
+    
+    <rdfs:Class rdf:ID="doctorskiprescription">
+        <rdfs:subClassOf rdf:resource="#Document"/>
+        <rdfs:label xml:lang="sr">doctorski prescription</rdfs:label>
+        <rdfs:comment xml:lang="sr">Predstavlja dokument u zdrastvenom sistemu u kojem se nalaze
+            podaci o preporucenom drugu na osnovu dijagnoze bolesti pacijenta</rdfs:comment>
+    </rdfs:Class>
+    
+    <rdfs:Class rdf:ID="referralZaSpecijalistickiexam">
+        <rdfs:subClassOf rdf:resource="#Document"/>
+        <rdfs:label xml:lang="sr">referral za specijalisticki exam</rdfs:label>
+        <rdfs:comment xml:lang="sr">Predstavlja dokument u zdrastvenom sistemu u kojem se nalaze
+            podaci za exam kod doctora specijaliste</rdfs:comment>
+    </rdfs:Class>
+    
+    <rdf:Property rdf:ID="insuredPerson">
+        <rdfs:label xml:lang="sr">Osigurano lice</rdfs:label>
+        <rdfs:domain rdf:resource="#Document"/>
+        <rdfs:range rdf:resource="#InsuredPerson"/>
+        <rdfs:comment xml:lang="sr">Predstavlja osigurano lice u documentu</rdfs:comment>
+    </rdf:Property>
+    
+    <rdf:Property rdf:ID="jmbg">
+        <rdfs:label xml:lang="sr">JMBG</rdfs:label>
+        <rdfs:domain rdf:resource="#Person"/>
+        <rdfs:range rdf:resource="xs:#string"/>
+        <rdfs:comment xml:lang="sr">Predstavlja JMBG osobe</rdfs:comment>
+    </rdf:Property>
+    
+    <rdf:Property rdf:ID="name">
+        <rdfs:label xml:lang="sr">ime</rdfs:label>
+        <rdfs:domain rdf:resource="#Person"/>
+        <rdfs:range rdf:resource="xs:#string"/>
+        <rdfs:comment xml:lang="sr">Predstavlja ime osobe</rdfs:comment>
+    </rdf:Property>
+    
+    <rdf:Property rdf:ID="surname">
+        <rdfs:label xml:lang="sr">surname</rdfs:label>
+        <rdfs:domain rdf:resource="#Person"/>
+        <rdfs:range rdf:resource="xs:#string"/>
+        <rdfs:comment xml:lang="sr">Predstavlja surname osobe</rdfs:comment>
+    </rdf:Property>
+    
+    <rdf:Property rdf:ID="sex">
+        <rdfs:label xml:lang="sr">pol</rdfs:label>
+        <rdfs:domain rdf:resource="#Person"/>
+        <rdfs:range rdf:resource="xs:#string"/>
+        <rdfs:comment xml:lang="sr">Predstavlja pol osobe</rdfs:comment>
+    </rdf:Property>
+    
+    <rdf:Property rdf:ID="BirthDate">
+        <rdfs:label xml:lang="sr">pol</rdfs:label>
+        <rdfs:domain rdf:resource="#Person"/>
+        <rdfs:range rdf:resource="xs:#date"/>
+        <rdfs:comment xml:lang="sr">Predstavlja date rodjenja osobe</rdfs:comment>
+    </rdf:Property>
+    
+    <rdf:Property rdf:ID="Date">
+        <rdfs:label xml:lang="sr">pol</rdfs:label>
+        <rdfs:domain rdf:resource="#Document"/>
+        <rdfs:range rdf:resource="xs:#date"/>
+        <rdfs:comment xml:lang="sr">Predstavlja date kreiranja dokumenta</rdfs:comment>
+    </rdf:Property>
+    
+    <rdf:Property rdf:ID="LivingAddress">
+        <rdfs:label xml:lang="sr">Adresa</rdfs:label>
+        <rdfs:domain rdf:resource="#InsuredPerson"/>
+        <rdfs:range rdf:resource="xs:#Address"/>
+        <rdfs:comment xml:lang="sr">Predstavlja adresu osiguranog lica</rdfs:comment>
+    </rdf:Property>
+    
+    <rdf:Property rdf:ID="Municipality">
+        <rdfs:label xml:lang="sr">Opstina</rdfs:label>
+        <rdfs:domain rdf:resource="#Address"/>
+        <rdfs:range rdf:resource="xs:#Municipality"/>
+        <rdfs:comment xml:lang="sr">Predstavlja opstinu kao sastavni deo adrese osiguranog lica</rdfs:comment>
+    </rdf:Property>
+    
+    <rdf:Property rdf:ID="Street">
+        <rdfs:label xml:lang="sr">Ulica</rdfs:label>
+        <rdfs:domain rdf:resource="#Address"/>
+        <rdfs:range rdf:resource="xs:#string"/>
+        <rdfs:comment xml:lang="sr">Predstavlja name ulice</rdfs:comment>
+    </rdf:Property>
+    
+    <rdf:Property rdf:ID="Number">
+        <rdfs:label xml:lang="sr">Broj</rdfs:label>
+        <rdfs:domain rdf:resource="#Address"/>
+        <rdfs:range rdf:resource="xs:#integer"/>
+        <rdfs:comment xml:lang="sr">Predstavlja broj ulice</rdfs:comment>
+    </rdf:Property>
+    
+    <rdf:Property rdf:ID="AppartmentNumber">
+        <rdfs:label xml:lang="sr">Broj stana</rdfs:label>
+        <rdfs:domain rdf:resource="#Address"/>
+        <rdfs:range rdf:resource="xs:#integer"/>
+        <rdfs:comment xml:lang="sr">Predstavlja broj stana ako je lokacija zgrada</rdfs:comment>
+    </rdf:Property>
+    
+    <rdf:Property rdf:ID="Town">
+        <rdfs:label xml:lang="sr">Mesto</rdfs:label>
+        <rdfs:domain rdf:resource="#Address"/>
+        <rdfs:range rdf:resource="xs:#string"/>
+        <rdfs:comment xml:lang="sr">Predstavlja mesto u kom boravi osigurano lice</rdfs:comment>
+    </rdf:Property>
+    
+    <rdf:Property rdf:ID="municipalityName">
+        <rdfs:label xml:lang="sr">Ime</rdfs:label>
+        <rdfs:domain rdf:resource="#Municipality"/>
+        <rdfs:range rdf:resource="xs:#string"/>
+        <rdfs:comment xml:lang="sr">Predstavlja ime opstine</rdfs:comment>
+    </rdf:Property>
+    
+    <rdf:Property rdf:ID="zipCode">
+        <rdfs:label xml:lang="sr">Postanski broj</rdfs:label>
+        <rdfs:domain rdf:resource="#Municipality"/>
+        <rdfs:range rdf:resource="xs:#integer"/>
+        <rdfs:comment xml:lang="sr">Predstavlja postanski broj opstine</rdfs:comment>
+    </rdf:Property>
+    
+    <rdf:Property rdf:ID="doctor">
+        <rdfs:label xml:lang="sr">type doctora</rdfs:label>
+        <rdfs:domain rdf:resource="#Document"/>
+        <rdfs:range rdf:resource="xs:#anyURI"/>
+        <rdfs:comment xml:lang="sr">Predstavlja doctora koji je povezan sa nekim dokumentom</rdfs:comment>
+    </rdf:Property>
+    
+    <rdf:Property rdf:ID="doctor_type">
+        <rdfs:label xml:lang="sr">type doctora</rdfs:label>
+        <rdfs:domain rdf:resource="#doctor"/>
+        <rdfs:range rdf:resource="xs:#string"/>
+        <rdfs:comment xml:lang="sr">Predstavlja type doctora</rdfs:comment>
+    </rdf:Property>
+    
+    <rdf:Property rdf:ID="healthcareArea">
+        <rdfs:label xml:lang="sr">Oblast zastite</rdfs:label>
+        <rdfs:domain rdf:resource="#doctor"/>
+        <rdfs:range rdf:resource="xs:#string"/>
+        <rdfs:comment xml:lang="sr">Predstavlja oblast zastite doctora</rdfs:comment>
+    </rdf:Property>
+    
+    <rdf:Property rdf:ID="drugName">
+        <rdfs:label xml:lang="sr">name</rdfs:label>
+        <rdfs:domain rdf:resource="#drug"/>
+        <rdfs:range rdf:resource="xs:#string"/>
+        <rdfs:comment xml:lang="sr">Predstavlja name leka</rdfs:comment>
+    </rdf:Property>
+    
+    <rdf:Property rdf:ID="previousDoctor">
+        <rdfs:label xml:lang="sr">Prosli doctor</rdfs:label>
+        <rdfs:domain rdf:resource="#Choice"/>
+        <rdfs:range rdf:resource="xs:#anyURI"/>
+        <rdfs:comment xml:lang="sr">Predstavlja prethodno izabranog doctora </rdfs:comment>
+    </rdf:Property>
+    
+    <rdf:Property rdf:ID="reasonForChange">
+        <rdfs:label xml:lang="sr">Razlog promene</rdfs:label>
+        <rdfs:domain rdf:resource="#Choice"/>
+        <rdfs:range rdf:resource="xs:#string"/>
+        <rdfs:comment xml:lang="sr">Predstavlja razlog promene odabranog doctora</rdfs:comment>
+    </rdf:Property>
+    
+    <rdf:Property rdf:ID="documentReference">
+        <rdfs:label xml:lang="sr">Referenca na dokument</rdfs:label>
+        <rdfs:domain rdf:resource="#Document"/>
+        <rdfs:range rdf:resource="#Document"/>
+        <rdfs:comment xml:lang="sr">Predstavlja referencu na neki povezan dokument</rdfs:comment>
+    </rdf:Property>
+    
+</rdf:RDF>

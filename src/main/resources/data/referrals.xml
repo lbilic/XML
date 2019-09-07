@@ -1,0 +1,17 @@
+<referrals:referrals xmlns:referrals="http://www.zis.rs/seme/referrals" xmlns:referral="http://www.zis.rs/seme/referral">
+    <referral:referral about="http://www.zis.rs/referrals/id90" aktivan="true" id="http://www.zis.rs/referrals/id90" label="oz2">
+        <referral:health_institution>
+            <referral:receiver>Dom Zdravlja</referral:receiver>
+            <referral:sender>Dom Zdravlja</referral:sender>
+        </referral:health_institution>
+        <referral:insured_person href="http://www.zis.rs/charts/id81" rel="voc:osiguranoLice" referral:identifier="http://www.zis.rs/charts/id81"/>
+        <referral:opinion>
+            Na osnovu reporta
+            <referral:link href="http://www.zis.rs/reports/id88" identifier="http://www.zis.rs/reports/id88" rel="voc:referencaNaDokument"/>
+            ustanovili smo da je potrebno da se obrati doctoru specijalisti.
+        </referral:opinion>
+        <referral:doctor href="http://www.zis.rs/doctors/id67" rel="voc:doctor" referral:identifier="http://www.zis.rs/doctors/id67"/>
+        <referral:date datatype="xs:date" property="voc:date">2019-05-01</referral:date>
+        <referral:specialist href="http://www.zis.rs/doctors/id71" rel="voc:specialist" referral:identifier="http://www.zis.rs/doctors/id71"/>
+    </referral:referral>
+</referrals:referrals>

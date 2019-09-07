@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified"
+           vc:minVersion="1.1" targetNamespace="http://zis.rs/seme/reports"
+           xmlns="http://zis.rs/seme/reports" xmlns:report="http://www.zis.rs/xml/schemes/report">
+    <xs:import namespace="http://www.zis.rs/xml/schemes/report" schemaLocation="report.xsd"/>
+    <xs:element name="reports">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="report:report"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified"
+    vc:minVersion="1.1" targetNamespace="http://www.zis.rs/xml/schemes/patient"
+    xmlns:patient="http://www.zis.rs/xml/schemes/patient">
+    <xs:element name="patient">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="user">
+                    <xs:complexType>
+                        <xs:attribute ref="patient:identifier" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="chart">
+                    <xs:complexType>
+                        <xs:attribute ref="patient:identifier" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="obavestenja">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="obavestenje">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute name="date" type="xs:dateTname"
+                                                use="required"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:anyURI" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:attribute name="identifier" type="xs:anyURI"/>
+</xs:schema>

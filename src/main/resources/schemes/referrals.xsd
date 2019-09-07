@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified"
+    vc:minVersion="1.1" targetNamespace="http://www.zis.rs/xml/schemes/referrals"
+    xmlns="http://www.zis.rs/xml/schemes/referrals" xmlns:referral="http://www.zis.rs/xml/schemes/referral">
+    <xs:import namespace="http://www.zis.rs/xml/schemes/referral" schemaLocation="referral.xsd"/>
+    <xs:element name="referrals">
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="referral:referral"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

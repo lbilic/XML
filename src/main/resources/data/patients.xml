@@ -1,0 +1,18 @@
+<pa:patients xmlns:patient="http://www.zis.rs/xml/schemes/patient" xmlns:pa="http://www.zis.rs/xml/schemes/patients">
+    <patient:patient id="http://www.zis.rs/patients/id82">
+        <patient:user patient:identifier="http://www.zis.rs/korisnici/id80"/>
+        <patient:chart patient:identifier="http://www.zis.rs/charts/id81"/>
+        <patient:notifications>
+            <patient:notification date="2019-02-07T21:32:40.488">Prihvacen termin.</patient:notification>
+            <patient:notification date="2019-02-07T22:49:32.947">Prihvacen termin.</patient:notification>
+            <patient:notification date="2019-02-07T23:15:15.582">Prihvacen termin.</patient:notification>
+            <patient:notification date="2019-02-07T23:21:42.968">Prihvacen termin.</patient:notification>
+            <patient:notification date="2019-02-07T23:44:35.500">Odbijen termin.</patient:notification>
+        </patient:notifications>
+    </patient:patient>
+    <patient:patient id="http://www.zis.rs/patients/id93">
+        <patient:user patient:identifier="http://www.zis.rs/korisnici/id91"/>
+        <patient:chart patient:identifier="http://www.zis.rs/charts/id92"/>
+        <patient:notifications/>
+    </patient:patient>
+</pa:patients>

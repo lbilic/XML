@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified"
+    vc:minVersion="1.1" targetNamespace="http://www.zis.rs/xml/schemes/prescription"
+    xmlns:prescription="http://www.zis.rs/xml/schemes/prescription">
+    <xs:element name="prescription">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="health_institution_name" type="xs:string"/>
+                <xs:element name="insured_person">
+                    <xs:complexType>
+                        <xs:attribute ref="prescription:identifier" use="required"/>
+                        <xs:anyAttribute processContents="lax"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="participation_release_reason" default="512">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:int">
+                            <xs:enumeration value="511"/>
+                            <xs:enumeration value="512"/>
+                            <xs:enumeration value="513"/>
+                            <xs:enumeration value="515"/>
+                            <xs:enumeration value="231"/>
+                            <xs:enumeration value="232"/>
+                            <xs:enumeration value="233"/>
+                            <xs:enumeration value="234"/>
+                            <xs:enumeration value="235"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="date">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:date">
+                                <xs:anyAttribute processContents="lax"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="diagnosis">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="[0-9]{4}"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="description">
+                    <xs:complexType mixed="true">
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="link">
+                                <xs:complexType>
+                                    <xs:attribute name="identifier" type="xs:anyURI"
+                                        use="required"/>
+                                    <xs:anyAttribute processContents="lax"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="prescribed_drug">
+                    <xs:complexType>
+                        <xs:attribute ref="prescription:identifier" use="required"/>
+                        <xs:anyAttribute processContents="lax"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="doctor">
+                    <xs:complexType>
+                        <xs:attribute ref="prescription:identifier" use="required"/>
+                        <xs:anyAttribute processContents="lax"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute fixed="lr1" name="label" type="xs:string" use="required"/>
+            <xs:attribute name="id" type="xs:anyURI" use="required"/>
+            <xs:attribute name="active" type="xs:boolean" use="required"/>
+            <xs:anyAttribute processContents="lax"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:attribute name="identifier" type="xs:anyURI"/>
+</xs:schema>

@@ -1,0 +1,54 @@
+<reports:reports xmlns:reports="http://www.zis.rs/xml/schemes/reports" xmlns:report="http://www.zis.rs/xml/schemes/report">
+    <report:report about="http://www.zis.rs/reports/id88" active="true" id="http://www.zis.rs/reports/id88" oznaka="il1">
+        <report:diagnosis>F320</report:diagnosis>
+        <report:anamnesis>Obicna prehlada</report:anamnesis>
+        <report:therapy>Lecenje antibioticima</report:therapy>
+        <report:date datatype="xs:date" property="voc:date">2019-06-21</report:date>
+        <report:insured_person href="http://www.zis.rs/charts/id81" report:identifier="http://www.zis.rs/charts/id81" rel="voc:insuredPerson"/>
+        <report:doctor href="http://www.zis.rs/doctors/id67" report:identifier="http://www.zis.rs/doctors/id67" rel="voc:doctor"/>
+    </report:report>
+    <report:report about="http://www.zis.rs/reports/id91" active="true" id="http://www.zis.rs/reports/id91" oznaka="il1">
+        <report:diagnosis>M051</report:diagnosis>
+        <report:anamnesis>
+            Na osnovu izvestaja
+            <report:link href="http://www.zis.rs/reports/id88" report:identifier="http://www.zis.rs/reports/id88" rel="voc:documentReference"/> i recepta
+            <report:link href="http://www.zis.rs/prescriptions/id87" report:identifier="http://www.zis.rs/prescriptions/id87" rel="voc:documentReference"/> ustanovili smo da se bolest prosirila na sve organe.
+        </report:anamnesis>
+        <report:therapy>
+            Na osnovu izvestaja
+            <report:link href="http://www.zis.rs/reports/id88" report:identifier="http://www.zis.rs/reports/id88" rel="voc:documentReference"/> i recepta
+            <report:link href="http://www.zis.rs/prescriptions/id87" report:identifier="http://www.zis.rs/prescriptions/id87" rel="voc:documentReference"/> ustanovili smo da je potrebno otici kod doctora specijaliste.
+        </report:therapy>
+        <report:date datatype="xs:date" property="voc:date">2019-05-01</report:date>
+        <report:insured_person href="http://www.zis.rs/charts/id81" report:identifier="http://www.zis.rs/charts/id81" rel="voc:insuredPerson"/>
+        <report:doctor href="http://www.zis.rs/doctors/id67" report:identifier="http://www.zis.rs/doctors/id67" rel="voc:doctor"/>
+    </report:report>
+    <report:report about="http://www.zis.rs/reports/id93" active="true" id="http://www.zis.rs/reports/id93" oznaka="il1">
+        <report:diagnosis>M06</report:diagnosis>
+        <report:anamnesis>
+            Na osnovu uputa <report:link href="http://www.zis.rs/uputi/id90" report:identifier="http://www.zis.rs/uputi/id90" rel="voc:documentReference"/> i izvestaja
+            <report:link href="http://www.zis.rs/reports/id91" report:identifier="http://www.zis.rs/reports/id91" rel="voc:documentReference"/> i recepta
+            <report:link href="http://www.zis.rs/prescriptions/id87" report:identifier="http://www.zis.rs/prescriptions/id87" rel="voc:documentReference"/> ustanovili smo da je pacijentu nema spasa.
+        </report:anamnesis>
+        <report:therapy>
+            Na osnovu uputa <report:link href="http://www.zis.rs/uputi/id90" report:identifier="http://www.zis.rs/uputi/id90" rel="voc:documentReference"/> i izvestaja
+            <report:link href="http://www.zis.rs/reports/id91" report:identifier="http://www.zis.rs/reports/id91" rel="voc:documentReference"/> i recepta
+            <report:link href="http://www.zis.rs/prescriptions/id87" report:identifier="http://www.zis.rs/prescriptions/id87" rel="voc:documentReference"/> ustanovili smo da je pacijentu nema spasa.
+        </report:therapy>
+        <report:date datatype="xs:date" property="voc:date">2021-07-17</report:date>
+        <report:insured_person href="http://www.zis.rs/charts/id81" report:identifier="http://www.zis.rs/charts/id81" rel="voc:insuredPerson"/>
+        <report:doctor href="http://www.zis.rs/doctors/id71" report:identifier="http://www.zis.rs/doctors/id71" rel="voc:doctor"/>
+    </report:report>
+    <report:report about="http://www.zis.rs/reports/id95" active="true" id="http://www.zis.rs/reports/id95" oznaka="il1">
+        <report:diagnosis>M06</report:diagnosis>
+        <report:anamnesis>
+            Pacijentu nema spasa.
+        </report:anamnesis>
+        <report:therapy>
+            Pacijentu nema spasa.
+        </report:therapy>
+        <report:date datatype="xs:date" property="voc:date">2021-07-25</report:date>
+        <report:insured_person href="http://www.zis.rs/charts/id81" report:identifier="http://www.zis.rs/charts/id81" rel="voc:insuredPerson"/>
+        <report:doctor href="http://www.zis.rs/doctors/id67" report:identifier="http://www.zis.rs/doctors/id67" rel="voc:doctor"/>
+    </report:report>
+</reports:reports>

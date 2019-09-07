@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+           targetNamespace="http://www.zis.rs/xml/schemes/exam" vc:minVersion="1.1"
+           xmlns:exam="http://www.zis.rs/xml/schemes/exam"
+           xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning">
+    <xs:element name="exam">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="doctor">
+                    <xs:complexType>
+                        <xs:attribute ref="exam:identifier" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="date" type="xs:dateTname"/>
+                <xs:element name="patient">
+                    <xs:complexType>
+                        <xs:attribute ref="exam:identifier" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="type">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="general_practice"/>
+                        <xs:enumeration value="specialist"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="id" type="xs:anyURI" use="required"/>
+            <xs:attribute name="active" type="xs:boolean" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:attribute name="identifier" type="xs:anyURI"/>
+</xs:schema>

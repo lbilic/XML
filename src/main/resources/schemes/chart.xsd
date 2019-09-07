@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+           targetNamespace="http://www.zis.rs/xml/schemes/chart"
+           xmlns:zko="http://www.zis.rs/xml/schemes/chart" vc:minVersion="1.1"
+           xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning">
+    <xs:element name="chart">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="insured_person">
+                    <xs:complexType>
+                        <xs:group ref="zko:insured_person"/>
+                        <xs:anyAttribute processContents="lax"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="chosen_doctor">
+                    <xs:complexType>
+                        <xs:attribute ref="zko:identifier" use="required"/>
+                        <xs:anyAttribute processContents="lax"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:anyURI" use="required"/>
+            <xs:attribute name="jmbg" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[0-9]{13}"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="health_card_number" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[0-9]{11}"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="chart_number" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[a-zA-Z]{2}[0-9]{3}"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="lbo" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[0-9]{11}"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="warning" type="xs:string"/>
+            <xs:attribute name="active" type="xs:boolean" use="required"/>
+            <xs:anyAttribute processContents="lax"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:group name="insured_person">
+        <xs:sequence>
+            <xs:element name="name">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:anyAttribute processContents="lax"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="surname">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:anyAttribute processContents="lax"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="sex">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="zko:sex">
+                            <xs:anyAttribute processContents="lax"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="insurance_carrier">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="name" type="xs:string"/>
+                        <xs:element name="surname" type="xs:string"/>
+                        <xs:element name="relation" type="xs:string"/>
+                        <xs:element name="osnova_osiguranja" type="xs:positiveInteger"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="marital_status">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="unmarried"/>
+                        <xs:enumeration value="married"/>
+                        <xs:enumeration value="widow/widower"/>
+                        <xs:enumeration value="divorced"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element form="qualified" name="birth_date">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:date">
+                            <xs:anyAttribute processContents="lax"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="address">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="street">
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:extension base="xs:string">
+                                        <xs:anyAttribute processContents="lax"/>
+                                    </xs:extension>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="number">
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:extension base="xs:positiveInteger">
+                                        <xs:anyAttribute processContents="lax"/>
+                                    </xs:extension>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="appartment_number">
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:extension base="xs:positiveInteger">
+                                        <xs:anyAttribute processContents="lax"/>
+                                    </xs:extension>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="town">
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:extension base="xs:string">
+                                        <xs:anyAttribute processContents="lax"/>
+                                    </xs:extension>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="municipality">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="name">
+                                        <xs:complexType>
+                                            <xs:simpleContent>
+                                                <xs:extension base="xs:string">
+                                                    <xs:anyAttribute processContents="lax"/>
+                                                </xs:extension>
+                                            </xs:simpleContent>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="zip_code">
+                                        <xs:complexType>
+                                            <xs:simpleContent>
+                                                <xs:extension base="zko:zip_code">
+                                                    <xs:anyAttribute processContents="lax"/>
+                                                </xs:extension>
+                                            </xs:simpleContent>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                                <xs:anyAttribute processContents="lax"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:anyAttribute processContents="lax"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="phone_number">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[0-9]{10}"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:group>
+    <xs:simpleType name="sex">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="muski"/>
+            <xs:enumeration value="zenski"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="zip_code">
+        <xs:restriction base="xs:long">
+            <xs:minInclusive value="11000"/>
+            <xs:maxInclusive value="40000"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:attribute name="identifier" type="xs:anyURI"/>
+</xs:schema>

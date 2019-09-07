@@ -1,0 +1,8 @@
+<nu:nurses xmlns:ms="http://www.zis.rs/xml/schemes/nurse" xmlns:me="http://www.zis.rs/xml/schemes/nurses">
+    <nur:nurse xmlns:nur="http://www.zis.rs/xml/schemes/nurse" id="http://www.zis.rs/nurse/id73">
+        <nur:user nur:identifikator="http://www.zis.rs/korisnici/id72"/>
+    </nur:nurse>
+    <nur:nurse xmlns:nur="http://www.zis.rs/xml/schemes/nurse" id="http://www.zis.rs/nurse/id75">
+        <nur:user nur:identifikator="http://www.zis.rs/korisnici/id74"/>
+    </nur:nurse>
+</nu:nurses>

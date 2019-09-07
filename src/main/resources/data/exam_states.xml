@@ -1,0 +1,5 @@
+<sp:stanja_exama xmlns:sp="http://www.zis.rs/xml/schemes/stanja_exama" xmlns:stp="http://www.zis.rs/xml/schemes/exam_state">
+    <stp:exam_state date="2019-02-07T21:35:52.360" pacijent="http://www.zis.rs/charts/id81" state="end"/>
+    <stp:exam_state date="2019-02-07T23:24:36.001" pacijent="http://www.zis.rs/charts/id81" state="end"/>
+    <stp:exam_state date="2019-02-07T23:44:35.610" pacijent="http://www.zis.rs/charts/id81" state="exam_doctor_gen"/>
+</sp:stanja_exama>
