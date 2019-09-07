@@ -1,0 +1,10 @@
+<div id="wrapper">
+    <select [(ngModel)]="chosenDoctor">
+      <option *ngFor="let doctor of doctors"></option>
+      <option>Doc 1</option>
+      <option>Doc 2</option>
+      <option>Doc 3</option>
+    </select>
+
+    <button (click)="onSubmit()">Confirm</button>
+</div>

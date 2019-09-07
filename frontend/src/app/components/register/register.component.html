@@ -1,0 +1,19 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Login Form -->
+    <form [formGroup]="registerForm">
+      <input type="text" id="firstname" class="fadeIn second" name="firstname" placeholder="First Name" formControlName="name">
+      <input type="text" id="lastname" class="fadeIn second" name="lastname" placeholder="Last Name">
+      <input type="email" id="email" class="fadeIn second" name="email" placeholder="E-mail">
+      <input type="phone" id="phone" class="fadeIn second" name="phone" placeholder="Phone">
+      <input type="text" id="username" class="fadeIn second" name="username" placeholder="Username">
+      <input type="text" id="password" class="fadeIn second" name="password" placeholder="Password">
+      <input type="text" id="r_password" class="fadeIn third" name="r_password" placeholder="Repeat Password">
+      <input type="button" class="fadeIn fourth" value="Register" (click)="onSubmit()">
+    </form>
+
+
+  </div>
+</div>
