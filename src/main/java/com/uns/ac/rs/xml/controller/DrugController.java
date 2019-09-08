@@ -9,7 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.uns.ac.rs.xml.domain.enums.ActionType;
-import com.uns.ac.rs.xml.service.nonProcessService.DrugService;
+import com.uns.ac.rs.xml.services.nonProcessService.DrugService;
 import com.uns.ac.rs.xml.util.Validator;
 import com.uns.ac.rs.xml.util.actions.Action;
 
@@ -45,7 +45,7 @@ public class DrugController extends ValidatorController {
     }
 
     @GetMapping(value = "/{diagnosis}/{patientId}", produces = MediaType.APPLICATION_XML_VALUE)
-    public ResponseEntity<String> diagnosisPacijenta(@PathVariable String diagnosis, @PathVariable String patientId) {
+    public ResponseEntity<String> patientDiagnosis(@PathVariable String diagnosis, @PathVariable String patientId) {
         return new ResponseEntity<>(drugService.getDrugForDiagnosis(diagnosis,
                 mapper.getURI("chart") + patientId), HttpStatus.OK);
     }

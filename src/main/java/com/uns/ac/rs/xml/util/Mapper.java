@@ -51,7 +51,7 @@ public class Mapper {
     }
 
     private void initializeMap() {
-        this.xmlDatabase.put("collection", "/db/rs/zis/");
+        this.xmlDatabase.put("collection", "/db/xml/");
         this.xmlDatabase.put("doctors", "doctors.xml");
         this.xmlDatabase.put("users", "users.xml");
         this.xmlDatabase.put("nurses", "nurses.xml");
@@ -106,14 +106,14 @@ public class Mapper {
         this.xmlQueries.put("getDrugForDiagnosis", "classpath:templates/xquery/drugs/getDrugForDiagnosis.xqy");
         this.xmlQueries.put("generalChartSearch", "classpath:templates/xquery/charts/generalChartSearch.xqy");
         this.xmlQueries.put("getExamState",
-                "classpath:templates/xquery/update/getExamState.xq");
+                "classpath:templates/xquery/update/getExamStatePath.xq");
         this.xmlQueries.put("countingPatients",
                 "classpath:templates/xquery/doctors/countingPatients.xq");
         this.xmlQueries.put("choiceConstraints", "classpath:templates/xquery/choices/choiceConstraints.xq");
-        this.xmlQueries.put("getAllDocuments",
-                "classpath:templates/xquery/opsti_queryi/getAllDocuments.xq");
+        this.xmlQueries.put("getDocument",
+                "classpath:templates/xquery/general_queries/getDocument.xq");
         this.xmlQueries.put("generalDocumentSearch",
-                "classpath:templates/xquery/opsti_queryi/generalDocumentSearch.xq");
+                "classpath:templates/xquery/general_queries/generalDocumentSearch.xq");
         this.xmlQueries.put("login", "classpath:templates/xquery/users/findUserByUsername.xq");
         this.xmlQueries.put("findUserByChart",
                 "classpath:templates/xquery/users/findUserByChart.xq");

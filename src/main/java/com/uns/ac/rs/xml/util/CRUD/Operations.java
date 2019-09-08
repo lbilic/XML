@@ -19,7 +19,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
 @Repository
-public class Operations extends IOStrnamer {
+public class Operations extends IOStreamer {
 
     @Autowired
     private ConfigureConnection connection;
@@ -31,7 +31,7 @@ public class Operations extends IOStrnamer {
     private Validator validator;
 
     @Autowired
-    private Sekvencer sequencer;
+    private Sequencer sequencer;
 
     @Autowired
     private MetadataGenerator metadataGenerator;
@@ -109,13 +109,13 @@ public class Operations extends IOStrnamer {
 
                 }
             }
-            String result = sb.toString();
+            String resultString = sb.toString();
             connection.freeResources(resources);
-            if (result.isEmpty()) {
+            if (resultString.isEmpty()) {
                 String name = document.substring(0, document.length() - 1);
                 throw new ValidationException(name + " not found in database!");
             } else {
-                return result;
+                return resultString;
             }
         } catch (ClassNotFoundException | IllegalAccessException | InstantiationException |
                 XMLDBException | IOException e) {
@@ -141,7 +141,6 @@ public class Operations extends IOStrnamer {
             String queryContent = String.format(this.loadFileContents(pathToQuery),
                     prefix, mapper.getPrefix(documentPrefix), pathToDrug,
                     mapper.getPrefix(document));
-            logger.info(queryContent);
             long mods = xupdateService.updateResource(mapper.getDocument(document), queryContent);
 
             connection.freeResources(resources);
@@ -196,7 +195,7 @@ public class Operations extends IOStrnamer {
                     .getService("XUpdateQueryService", "1.0");
             xupdateService.setProperty("indent", "yes");
 
-            Long id = sequencer.dobaviId();
+            Long id = sequencer.getId();
 
             String newId = mapper.getURI(documentPrefix) + id.toString();
             Document addedId = this.emplaceId(mapper.convertToDocument(entityContent).getFirstChild(), id, documentPrefix);
@@ -278,7 +277,7 @@ public class Operations extends IOStrnamer {
 
             return doc;
         } catch (ParserConfigurationException e) {
-            throw new TransformationException("Data processing not possible!");
+            throw new TransformerException("Data processing not possible!");
         } catch (ValidationException e) {
             throw new ValidationException(e.getMessage());
         }
@@ -325,16 +324,16 @@ public class Operations extends IOStrnamer {
     private NodeList addMetadataEdit(String entity, NodeList document, String id) {
         switch (entity) {
             case "report":
-                metadataGenerator.addMetadataIzvestaju(document, id);
+                metadataGenerator.addReportMetadata(document, id);
                 break;
             case "referral":
-                metadataGenerator.addMetadataUputu(document, id);
+                metadataGenerator.addPrescriptionMetadata(document, id);
                 break;
             case "prescription":
-                metadataGenerator.addMetadataReceptu(document, id);
+                metadataGenerator.addDrugMetadata(document, id);
                 break;
             case "drug":
-                metadataGenerator.addMetadataLeku(document, id);
+                metadataGenerator.addDrugMetadata(document, id);
         }
         return document;
     }
@@ -342,18 +341,18 @@ public class Operations extends IOStrnamer {
     private Document addMetadata(String entity, Document document, String id) {
         switch (entity) {
             case "report":
-                metadataGenerator.addMetadataIzvestaju(document.getFirstChild().getChildNodes(), id);
+                metadataGenerator.addReportMetadata(document.getFirstChild().getChildNodes(), id);
                 break;
             case "referral":
-                metadataGenerator.addMetadataUputu(document.getFirstChild().getChildNodes(), id);
+                metadataGenerator.addReferralMetadata(document.getFirstChild().getChildNodes(), id);
                 break;
             case "prescription":
-                metadataGenerator.addMetadataReceptu(document.getFirstChild().getChildNodes(), id);
+                metadataGenerator.addPrescriptionMetadata(document.getFirstChild().getChildNodes(), id);
                 break;
             case "drug":
-                metadataGenerator.addMetadataLeku(document.getFirstChild().getChildNodes(), id);
+                metadataGenerator.addDrugMetadata(document.getFirstChild().getChildNodes(), id);
             case "choice":
-                metadataGenerator.addMetadataIzboru(document.getFirstChild().getChildNodes(), id);
+                metadataGenerator.addChoiceMetadata(document.getFirstChild().getChildNodes(), id);
         }
         return document;
     }

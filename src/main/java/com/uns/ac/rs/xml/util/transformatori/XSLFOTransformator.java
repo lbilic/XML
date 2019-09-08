@@ -3,7 +3,7 @@ package com.uns.ac.rs.xml.util.transformatori;
 import org.apache.fop.apps.FOUserAgent;
 import org.apache.fop.apps.Fop;
 import org.apache.fop.apps.FopFactory;
-import org.apache.fop.apps.MnameConstants;
+import org.apache.fop.apps.MimeConstants;
 import org.apache.xalan.processor.TransformerFactoryImpl;
 import org.springframework.stereotype.Component;
 import org.xml.sax.SAXException;
@@ -62,7 +62,7 @@ public class XSLFOTransformator {
         Transformer xslFoTransformer = transformerFactory.newTransformer(transformSource);
 
         // Construct FOP instance with desired output format
-        Fop fop = fopFactory.newFop(MnameConstants.MIME_PDF, userAgent, outStream);
+        Fop fop = fopFactory.newFop(MimeConstants.MIME_PDF, userAgent, outStream);
 
         // Resulting SAX events
         Result res = new SAXResult(fop.getDefaultHandler());
