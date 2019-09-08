@@ -78,9 +78,9 @@ public class ConfigureConnection {
         }
     }
 
-    public void freeResources(DatabaseResources resourcei) {
-        if (resourcei != null) {
-            this.freeResources(resourcei.getCollection(), resourcei.getXmlResource());
+    public void freeResources(DatabaseResources resources) {
+        if (resources != null) {
+            this.freeResources(resources.getCollection(), resources.getXmlResource());
         }
     }
 
