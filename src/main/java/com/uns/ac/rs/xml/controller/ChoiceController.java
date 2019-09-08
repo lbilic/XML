@@ -10,6 +10,7 @@ import com.uns.ac.rs.xml.domain.enums.ActionType;
 import com.uns.ac.rs.xml.services.service.ChoiceService;
 import com.uns.ac.rs.xml.util.actions.Action;
 
+@CrossOrigin(origins="localhost:4200")
 @RestController
 @RequestMapping("/choices")
 public class ChoiceController {

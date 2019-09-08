@@ -11,6 +11,7 @@ import com.uns.ac.rs.xml.domain.enums.ActionType;
 import com.uns.ac.rs.xml.services.service.DrugService;
 import com.uns.ac.rs.xml.util.actions.Action;
 
+@CrossOrigin(origins="localhost:4200")
 @RestController
 @RequestMapping("/drugs")
 public class DrugController{

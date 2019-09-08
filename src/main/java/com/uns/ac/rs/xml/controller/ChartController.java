@@ -14,7 +14,7 @@ import com.uns.ac.rs.xml.domain.DTO.SearchResult;
 
 import javax.servlet.http.HttpSession;
 
-
+@CrossOrigin(origins="localhost:4200")
 @RestController
 @RequestMapping("/charts")
 public class ChartController {
