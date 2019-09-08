@@ -46,4 +46,5 @@ export class ChooseDoctorComponent implements OnInit {
       } 
     );
   }
+
 }
