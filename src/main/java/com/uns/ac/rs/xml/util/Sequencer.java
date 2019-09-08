@@ -9,9 +9,12 @@ import org.xmldb.api.modules.XQueryService;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 @Component
-public class Sequencer extends IOStreamer {
+public class Sequencer {
 
     private long counter;
 
@@ -72,5 +75,10 @@ public class Sequencer extends IOStreamer {
             this.initialization();
         }
         return ++counter;
+    }
+
+    String loadFileContents(String path) throws IOException {
+        byte[] encoded = Files.readAllBytes(Paths.get(path));
+        return new String(encoded, StandardCharsets.UTF_8);
     }
 }

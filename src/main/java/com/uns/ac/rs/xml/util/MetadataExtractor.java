@@ -12,9 +12,12 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 @Component
-public class MetadataExtractor extends IOStreamer {
+public class MetadataExtractor {
 
     private TransformerFactory transformerFactory;
 
@@ -40,5 +43,10 @@ public class MetadataExtractor extends IOStreamer {
             throw new com.uns.ac.rs.xml.util.TransformerException("Error while processing data!");
         }
 
+    }
+
+    String loadFileContents(String path) throws IOException {
+        byte[] encoded = Files.readAllBytes(Paths.get(path));
+        return new String(encoded, StandardCharsets.UTF_8);
     }
 }

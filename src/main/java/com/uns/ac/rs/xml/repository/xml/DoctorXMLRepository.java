@@ -6,8 +6,13 @@ import com.uns.ac.rs.xml.util.CRUD.Operations;
 import com.uns.ac.rs.xml.util.ConfigureConnection;
 import com.uns.ac.rs.xml.util.Mapper;
 
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 @Repository
-public class DoctorXMLRepository extends com.uns.ac.rs.xml.util.IOStreamer {
+public class DoctorXMLRepository {
 
     @Autowired
     private ConfigureConnection connection;
@@ -31,6 +36,11 @@ public class DoctorXMLRepository extends com.uns.ac.rs.xml.util.IOStreamer {
 
     public String countingPatients() {
         return operations.findById("", document, "countingPatients");
+    }
+
+    private String loadFileContents(String path) throws IOException {
+        byte[] encoded = Files.readAllBytes(Paths.get(path));
+        return new String(encoded, StandardCharsets.UTF_8);
     }
 }
 

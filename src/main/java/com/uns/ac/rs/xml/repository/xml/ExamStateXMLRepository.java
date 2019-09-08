@@ -14,12 +14,15 @@ import com.uns.ac.rs.xml.util.*;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class ExamStateXMLRepository extends IOStreamer {
+public class ExamStateXMLRepository {
 
     @Autowired
     private ConfigureConnection connection;
@@ -178,5 +181,10 @@ public class ExamStateXMLRepository extends IOStreamer {
         } catch (ParserConfigurationException e) {
             throw new TransformerException("Error while processing data!");
         }
+    }
+
+    private String loadFileContents(String path) throws IOException {
+        byte[] encoded = Files.readAllBytes(Paths.get(path));
+        return new String(encoded, StandardCharsets.UTF_8);
     }
 }

@@ -31,9 +31,12 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 @Repository
-public class ExamXMLRepository extends IOStreamer {
+public class ExamXMLRepository {
 
     @Autowired
     private ConfigureConnection connection;
@@ -362,5 +365,8 @@ public class ExamXMLRepository extends IOStreamer {
         }
     }
 
-
+    String loadFileContents(String path) throws IOException {
+        byte[] encoded = Files.readAllBytes(Paths.get(path));
+        return new String(encoded, StandardCharsets.UTF_8);
+    }
 }

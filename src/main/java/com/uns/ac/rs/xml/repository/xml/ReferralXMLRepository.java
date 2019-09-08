@@ -7,8 +7,13 @@ import org.w3c.dom.NodeList;
 import com.uns.ac.rs.xml.util.CRUD.Operations;
 import com.uns.ac.rs.xml.util.Mapper;
 
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 @Repository
-public class ReferralXMLRepository extends com.uns.ac.rs.xml.util.IOStreamer {
+public class ReferralXMLRepository {
 
     @Autowired
     private DoctorXMLRepository doctorXMLRepository;
@@ -71,5 +76,10 @@ public class ReferralXMLRepository extends com.uns.ac.rs.xml.util.IOStreamer {
         doctorXMLRepository.findById(specialistId);
         userXMLRepository.findById(userId);
 
+    }
+
+    private String loadFileContents(String path) throws IOException {
+        byte[] encoded = Files.readAllBytes(Paths.get(path));
+        return new String(encoded, StandardCharsets.UTF_8);
     }
 }

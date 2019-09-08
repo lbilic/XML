@@ -22,13 +22,16 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.validation.SchemaFactory;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 
 import static org.exist.security.internal.SMEvents.PREFIX;
 
 
 @Repository
-public class UserXMLRepository extends IOStreamer {
+public class UserXMLRepository {
 
     @Autowired
     private ConfigureConnection connection;
@@ -500,5 +503,10 @@ public class UserXMLRepository extends IOStreamer {
         } catch (ParserConfigurationException e) {
             throw new TransformerException("Error while processing data!");
         }
+    }
+
+    private String loadFileContents(String path) throws IOException {
+        byte[] encoded = Files.readAllBytes(Paths.get(path));
+        return new String(encoded, StandardCharsets.UTF_8);
     }
 }

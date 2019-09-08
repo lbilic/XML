@@ -5,8 +5,13 @@ import org.springframework.stereotype.Repository;
 import com.uns.ac.rs.xml.util.CRUD.Operations;
 import com.uns.ac.rs.xml.util.Mapper;
 
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 @Repository
-public class DrugXMLRepository extends com.uns.ac.rs.xml.util.IOStreamer {
+public class DrugXMLRepository {
 
     @Autowired
     private Operations operations;
@@ -39,5 +44,10 @@ public class DrugXMLRepository extends com.uns.ac.rs.xml.util.IOStreamer {
 
     public String getDrugForDiagnosis(String diagnosis, String patientId) {
         return operations.getDrugForDiagnosis(diagnosis, patientId);
+    }
+
+    private String loadFileContents(String path) throws IOException {
+        byte[] encoded = Files.readAllBytes(Paths.get(path));
+        return new String(encoded, StandardCharsets.UTF_8);
     }
 }

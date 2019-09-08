@@ -16,9 +16,12 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.StringReader;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 @Repository
-public class ConstraintsRepository extends IOStreamer {
+public class ConstraintsRepository {
 
     @Autowired
     private ConfigureConnection connection;
@@ -197,5 +200,10 @@ public class ConstraintsRepository extends IOStreamer {
             connection.freeResources(resources);
             throw new DatabaseConnectionException("Access to database not possible!");
         }
+    }
+
+    String loadFileContents(String path) throws IOException {
+        byte[] encoded = Files.readAllBytes(Paths.get(path));
+        return new String(encoded, StandardCharsets.UTF_8);
     }
 }

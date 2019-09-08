@@ -1,4 +1,4 @@
-package com.uns.ac.rs.xml.util.transformatori;
+package com.uns.ac.rs.xml.util.transformators;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;

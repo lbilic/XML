@@ -7,8 +7,13 @@ import org.w3c.dom.NodeList;
 import com.uns.ac.rs.xml.util.CRUD.Operations;
 import com.uns.ac.rs.xml.util.Mapper;
 
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 @Repository
-public class ChoiceXMLRepository extends com.uns.ac.rs.xml.util.IOStreamer {
+public class ChoiceXMLRepository {
 
     @Autowired
     private DoctorXMLRepository doctorXMLRepository;
@@ -81,6 +86,11 @@ public class ChoiceXMLRepository extends com.uns.ac.rs.xml.util.IOStreamer {
         }
         constraintsRepository.checkChoiceRestraints(chartId, previousDoctor, doctorId);
 
+    }
+
+    private String loadFileContents(String path) throws IOException {
+        byte[] encoded = Files.readAllBytes(Paths.get(path));
+        return new String(encoded, StandardCharsets.UTF_8);
     }
 
 }

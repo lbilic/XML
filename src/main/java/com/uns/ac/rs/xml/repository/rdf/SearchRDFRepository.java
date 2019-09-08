@@ -11,10 +11,14 @@ import com.uns.ac.rs.xml.domain.QueryParameter;
 import com.uns.ac.rs.xml.domain.SearchQuery;
 import com.uns.ac.rs.xml.util.*;
 
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Iterator;
 
 @Repository
-public class SearchRDFRepository extends IOStreamer {
+public class SearchRDFRepository {
 
     @Autowired
     private ConfigureConnection connection;
@@ -143,5 +147,10 @@ public class SearchRDFRepository extends IOStreamer {
             ++j;
         }
         return sb.toString();
+    }
+
+    private String loadFileContents(String path) throws IOException {
+        byte[] encoded = Files.readAllBytes(Paths.get(path));
+        return new String(encoded, StandardCharsets.UTF_8);
     }
 }

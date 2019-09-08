@@ -40,7 +40,7 @@ public class ChoiceService {
                 result.trim().replaceFirst(" ", "  " + mapper.getPrefix("vocabulary")
                         + mapper.getPrefix("xmlScheme"));
         rdfRepository.save(newResult, mapper.getGraph("choices"), false);
-        this.editDoctoraUKartonu(action);
+        this.editDoctorInChart(action);
         return "Uspesno promenjen doctor.";
     }
 
@@ -52,7 +52,7 @@ public class ChoiceService {
         return choiceXMLRepository.edit(action);
     }
 
-    private void editDoctoraUKartonu(com.uns.ac.rs.xml.util.actions.Action action) {
+    private void editDoctorInChart(com.uns.ac.rs.xml.util.actions.Action action) {
         Document doc = ((ElementNSImpl) action.getContent().getAny()).getOwnerDocument();
         String doctorId = "";
         String chartId = "";

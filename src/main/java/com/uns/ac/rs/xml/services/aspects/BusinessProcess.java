@@ -12,9 +12,14 @@ import com.uns.ac.rs.xml.domain.enums.*;
 import com.uns.ac.rs.xml.services.states.Process;
 import com.uns.ac.rs.xml.util.Mapper;
 
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 @Aspect
 @Configuration
-public class BusinessProcess extends com.uns.ac.rs.xml.util.IOStreamer {
+public class BusinessProcess {
 
     @Autowired
     private ExamStateService service;
@@ -164,5 +169,10 @@ public class BusinessProcess extends com.uns.ac.rs.xml.util.IOStreamer {
         if (process.getProcesses().containsKey(patient)) {
             throw new com.uns.ac.rs.xml.util.ValidationException("Not possible to changed doctors mid exam.");
         }
+    }
+
+    String loadFileContents(String path) throws IOException {
+        byte[] encoded = Files.readAllBytes(Paths.get(path));
+        return new String(encoded, StandardCharsets.UTF_8);
     }
 }

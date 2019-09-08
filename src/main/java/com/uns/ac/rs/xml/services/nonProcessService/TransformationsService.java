@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import com.uns.ac.rs.xml.repository.xml.ChoiceXMLRepository;
 import com.uns.ac.rs.xml.repository.xml.ReportXMLRepository;
 import com.uns.ac.rs.xml.repository.xml.ReferralXMLRepository;
-import com.uns.ac.rs.xml.util.transformatori.PDFTransformator;
+import com.uns.ac.rs.xml.util.transformators.PDFTransformator;
 
 import java.io.*;
 

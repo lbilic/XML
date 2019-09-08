@@ -49,7 +49,7 @@ public class UserService {
 
     public String register(com.uns.ac.rs.xml.util.actions.Action action) {
         String[] results = userXMLRepository.register(action);
-        results = this.preProcessesranje(results[1], results[0]);
+        results = this.preProcessing(results[1], results[0]);
         if (results[1].equals(mapper.getGraph("charts"))) {
             rdfRepository.save(results[0], results[1], true);
         } else {
@@ -68,7 +68,7 @@ public class UserService {
         return userXMLRepository.findNotificationsByUser(id);
     }
 
-    private String[] preProcessesranje(String glavni, String pomocni) {
+    private String[] preProcessing(String glavni, String pomocni) {
         String graph = mapper.getGraph("charts");
         glavni = glavni.trim().replaceFirst(" ", "  " + mapper.getPrefix("vocabulary")
                 + mapper.getPrefix("xmlScheme"));
