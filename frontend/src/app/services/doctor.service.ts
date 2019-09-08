@@ -9,7 +9,7 @@ export class DoctorService {
   constructor(private http: HttpClient) { }
 
   public getDoctors(){
-    return this.http.get<any>("http://localhost:9003/doctor/all");
+    return this.http.get<any>("http://localhost:3030/doctors");
   }
 
   public getExams(){
