@@ -24,6 +24,6 @@ declare function functx:path-to-node-with-pos
             , '/')
 };
 
-let $dokument := fn:doc("%1$s")
+let $dokument := doc("%1$s")
 return fn:concat("/", functx:path-to-node-with-pos($dokument//@id[. = "%2$s"]))
 

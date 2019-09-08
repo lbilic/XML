@@ -1,7 +1,7 @@
 xquery version "3.1";
 
-declare namespace sp = "http://www.zis.rs/schemes/exam_states";
-declare namespace stp = "http://www.zis.rs/schemes/exam_state";
+declare namespace sp = "http://www.zis.rs/xml/schemes/exam_states";
+declare namespace stp = "http://www.zis.rs/xml/schemes/exam_state";
 
 declare namespace functx = "http://www.functx.com";
 
@@ -33,10 +33,10 @@ declare function functx:path-to-node-with-pos
             , '/')
 };
 
-declare variable $stanja :=
-    for $state in fn:doc("/db/rs/zis/exam_states.xml")/sp:exam_states/stp:exam_state
-    where $state/@patient = "%1$s"
+declare variable $states :=
+    for $state in doc("/db/rs/zis/exam_states.xml")/sp:exam_states/stp:exam_state
+    where $state//@patient = "%1$s"
     return $state;
 
-let $state := functx:last-node($stanja)
+let $state := functx:last-node($states)
 return fn:concat("/", functx:path-to-node-with-pos($state))

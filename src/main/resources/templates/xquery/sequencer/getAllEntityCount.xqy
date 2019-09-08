@@ -1,60 +1,60 @@
 xquery version "3.1";
 
-declare namespace doctors = "http://www.zis.rs/seme/doctors";
-declare namespace doctor = "http://www.zis.rs/seme/doctor";
+declare namespace doctors = "http://www.zis.rs/xml/schemes/doctors";
+declare namespace doctor = "http://www.zis.rs/xml/schemes/doctor";
 
-declare namespace referrals = "http://www.zis.rs/seme/referrals";
-declare namespace referral = "http://www.zis.rs/seme/referral";
+declare namespace referrals = "http://www.zis.rs/xml/schemes/referrals";
+declare namespace referral = "http://www.zis.rs/xml/schemes/referral";
 
-declare namespace drugs = "http://www.zis.rs/seme/drugs";
-declare namespace drug = "http://www.zis.rs/seme/drug";
+declare namespace drugs = "http://www.zis.rs/xml/schemes/drugs";
+declare namespace drug = "http://www.zis.rs/xml/schemes/drug";
 
-declare namespace reports = "http://www.zis.rs/seme/reports";
-declare namespace report = "http://www.zis.rs/seme/report";
+declare namespace reports = "http://www.zis.rs/xml/schemes/reports";
+declare namespace report = "http://www.zis.rs/xml/schemes/report";
 
-declare namespace prescriptions = "http://www.zis.rs/seme/prescriptions";
-declare namespace prescription = "http://www.zis.rs/seme/prescription";
+declare namespace prescriptions = "http://www.zis.rs/xml/schemes/prescriptions";
+declare namespace prescription = "http://www.zis.rs/xml/schemes/prescription";
 
-declare namespace zd= "http://www.zis.rs/seme/charts";
-declare namespace zko="http://www.zis.rs/seme/chart";
+declare namespace zd= "http://www.zis.rs/xml/schemes/charts";
+declare namespace zko="http://www.zis.rs/xml/schemes/chart";
 
-declare namespace exams = "http://www.zis.rs/seme/exams";
-declare namespace exam = "http://www.zis.rs/seme/exam";
+declare namespace exams = "http://www.zis.rs/xml/schemes/exams";
+declare namespace exam = "http://www.zis.rs/xml/schemes/exam";
 
-declare namespace me = "http://www.zis.rs/seme/medicinske_sestre";
-declare namespace ms = "http://www.zis.rs/seme/medicinska_sestra";
+declare namespace me = "http://www.zis.rs/xml/schemes/nurses";
+declare namespace ms = "http://www.zis.rs/xml/schemes/nurse";
 
-declare namespace ko = "http://www.zis.rs/seme/users";
-declare namespace user = "http://www.zis.rs/seme/user";
+declare namespace ko = "http://www.zis.rs/xml/schemes/users";
+declare namespace user = "http://www.zis.rs/xml/schemes/user";
 
-declare namespace choices = "http://www.zis.rs/seme/choices";
-declare namespace choice = "http://www.zis.rs/seme/choice";
+declare namespace choices = "http://www.zis.rs/xml/schemes/choices";
+declare namespace choice = "http://www.zis.rs/xml/schemes/choice";
 
-let $users := for $user in fn:doc("/db/rs/zis/users.xml")/ko:users/user:user
+let $users := for $user in doc("/db/xml/schemes/users.xml")/ko:users/user:user
 return $user
 
-let $med_ses := for $med_se in fn:doc("/db/rs/zis/medicinske_sestre.xml")/me:medicinske_sestre/ms:medicinska_sestra
+let $med_ses := for $med_se in doc("/db/xml/schemes/nurses.xml")/me:nurses/ms:nurse
 return $med_se
 
-let $prescriptions := for $prescription in fn:doc("/db/rs/zis/prescriptions.xml")/prescriptions:prescriptions/prescription:prescription
+let $prescriptions := for $prescription in fn:doc("/db/xml/schemes/prescriptions.xml")/prescriptions:prescriptions/prescription:prescription
 return $prescription
 
-let $reports := for $report in fn:doc("/db/rs/zis/reports.xml")/reports:reports/report:report
+let $reports := for $report in doc("/db/xml/schemes/reports.xml")/reports:reports/report:report
 return $report
 
-let $referrals := for $referral in fn:doc("/db/rs/zis/referrals.xml")/referrals:referrals/referral:referral return $referral
+let $referrals := for $referral in doc("/db/xml/schemes/referrals.xml")/referrals:referrals/referral:referral return $referral
 
-let $drugs := for $drug in fn:doc("/db/rs/zis/drugs.xml")/drugs:drugs/drug:drug return $drug
+let $drugs := for $drug in doc("/db/xml/schemes/drugs.xml")/drugs:drugs/drug:drug return $drug
 
-let $doctors := for $doctor in fn:doc("/db/rs/zis/doctors.xml")/doctors:doctors/doctor:doctor return $doctor
+let $doctors := for $doctor in oc("/db/xml/schemes/doctors.xml")/doctors:doctors/doctor:doctor return $doctor
 
-let $zd_kartoni := for $zd_karton in fn:doc("/db/rs/zis/charts.xml")/zd:charts/zko:chart
+let $zd_kartoni := for $zd_karton in doc("/db/xml/schemes/charts.xml")/zd:charts/zko:chart
 return $zd_karton
 
-let $exams := for $exam in fn:doc("/db/rs/zis/exams.xml")/exams:exams/exam:exam
+let $exams := for $exam in doc("/db/xml/schemes/exams.xml")/exams:exams/exam:exam
 return $exam
 
-let $choices := for $choice in fn:doc("/db/rs/zis/choices.xml")/choices:choices/choice:choice
+let $choices := for $choice in doc("/db/xml/schemes/choices.xml")/choices:choices/choice:choice
 return $choice
 
 return fn:count($doctors) +  fn:count($drugs) +  fn:count($referrals) + fn:count($reports) + fn:count($doctors)

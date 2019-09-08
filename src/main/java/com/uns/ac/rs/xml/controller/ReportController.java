@@ -12,6 +12,7 @@ import com.uns.ac.rs.xml.services.nonProcessService.ReportService;
 import com.uns.ac.rs.xml.util.ValidationException;
 import com.uns.ac.rs.xml.util.actions.Action;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/reports")
 public class ReportController extends ValidatorController {

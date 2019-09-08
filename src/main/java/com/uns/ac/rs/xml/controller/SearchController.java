@@ -11,6 +11,7 @@ import com.uns.ac.rs.xml.domain.SearchQuery;
 import com.uns.ac.rs.xml.services.nonProcessService.SearchService;
 import com.uns.ac.rs.xml.util.actions.Action;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/search")
 public class SearchController extends ValidatorController {

@@ -10,6 +10,7 @@ import com.uns.ac.rs.xml.services.nonProcessService.ReferralService;
 import com.uns.ac.rs.xml.util.ValidationException;
 import com.uns.ac.rs.xml.util.actions.Action;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/referrals")
 public class ReferralController extends ValidatorController {

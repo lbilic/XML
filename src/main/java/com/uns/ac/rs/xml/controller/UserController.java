@@ -12,6 +12,7 @@ import com.uns.ac.rs.xml.util.actions.Action;
 
 import javax.servlet.http.HttpSession;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/users")
 public class UserController extends ValidatorController {

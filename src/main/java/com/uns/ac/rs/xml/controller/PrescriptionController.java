@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import com.uns.ac.rs.xml.services.nonProcessService.PrescriptionService;
 import com.uns.ac.rs.xml.util.ValidationException;
 
-@RestController
+@CrossOrigin(origins = "http://localhost:4200")
+@RestController()
 @RequestMapping("/prescriptions")
 public class PrescriptionController extends ValidatorController {
 
