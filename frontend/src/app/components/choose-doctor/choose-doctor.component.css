@@ -75,3 +75,9 @@ input[type=text], select {
   input[type=text]:placeholder, select:placeholder {
     color: #cccccc;
   }
+
+  label{
+    margin-left: 10%;
+    font-size: 20px;
+    margin-bottom: 5px;
+}

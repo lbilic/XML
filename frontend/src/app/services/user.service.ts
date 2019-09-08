@@ -50,4 +50,12 @@ export class UserService {
   public chooseDoctor(doctor){
     return this.http.post<any>("http://localhost:9003/user/chooseDoctor", doctor);
   }
+
+  public getMedicalRecord(){
+    return this.http.get<any>("http://localhost:9003/user/medicalRecord");
+  }
+
+  public getNotifications(){
+    return this.http.get<any>("http://localhost:9003/user/notifications");
+  }
 }

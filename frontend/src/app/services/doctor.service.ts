@@ -11,4 +11,8 @@ export class DoctorService {
   public getDoctors(){
     return this.http.get<any>("http://localhost:9003/doctor/all");
   }
+
+  public getExams(){
+    return this.http.get<any>("http://localhost:9003/doctor/exams");
+  }
 }
