@@ -23,7 +23,7 @@ public class BusinessProcess extends com.uns.ac.rs.xml.util.IOStreamer {
     private Mapper mapper;
 
     @Autowired
-    private Process proces;
+    private Process process;
 
     @Before("execution(* com.uns.ac.rs.xml.services.states.SchedulingExam.processRequest(..)) && args(action,..)")
     public void beforeCreatingAppointment(com.uns.ac.rs.xml.util.actions.Action action) {
@@ -36,13 +36,13 @@ public class BusinessProcess extends com.uns.ac.rs.xml.util.IOStreamer {
     @Before("execution(* com.uns.ac.rs.xml.services.states.AcceptAppointment.processRequest(..)) && args(action,..)")
     public void beforeAcceptingAppointment(com.uns.ac.rs.xml.util.actions.Action action) {
         if (action.getFunction().equals(ActionType.DELETE.toString())) {
-            proces.getAcceptAppointment().setOption(Options.DECLINE_EXAM);
+            process.getAcceptAppointment().setOption(Options.DECLINE_EXAM);
         } else if (action.getFunction().equals(ActionType.EDIT.toString()) &&
                 action.getContext().equals(Context.EDIT.toString())) {
-            proces.getAcceptAppointment().setOption(Options.EDIT_EXAM);
+            process.getAcceptAppointment().setOption(Options.EDIT_EXAM);
         } else if (action.getFunction().equals(ActionType.EDIT.toString()) &&
                 action.getContext().equals(Context.ACCEPT.toString())) {
-            proces.getAcceptAppointment().setOption(Options.ACCEPT_EXAM);
+            process.getAcceptAppointment().setOption(Options.ACCEPT_EXAM);
         } else {
             throw new com.uns.ac.rs.xml.util.ValidationException("Invalid action passed!");
         }
@@ -52,10 +52,10 @@ public class BusinessProcess extends com.uns.ac.rs.xml.util.IOStreamer {
     @Before("execution(* com.uns.ac.rs.xml.services.states.ChangedAppointment.processRequest(..)) && args(action,..)")
     public void beforeAcceptingChangedAppointment(com.uns.ac.rs.xml.util.actions.Action action) {
         if (action.getFunction().equals(ActionType.DELETE.toString())) {
-            proces.getChangedAppointment().setOption(Options.DECLINE_EXAM);
+            process.getChangedAppointment().setOption(Options.DECLINE_EXAM);
         } else if (action.getFunction().equals(ActionType.EDIT.toString()) &&
                 action.getContext().equals(Context.ACCEPT.toString())) {
-            proces.getChangedAppointment().setOption(Options.ACCEPT_EXAM);
+            process.getChangedAppointment().setOption(Options.ACCEPT_EXAM);
         } else {
             throw new com.uns.ac.rs.xml.util.ValidationException("Invalid action passed!");
         }
@@ -65,26 +65,26 @@ public class BusinessProcess extends com.uns.ac.rs.xml.util.IOStreamer {
     @AfterReturning(pointcut = "execution(* com.uns.ac.rs.xml.services.states.SchedulingExam.createExam(..)) && args(action,..)")
     public void afterCreatingExam(com.uns.ac.rs.xml.util.actions.Action action) {
         String patient = mapper.getPatientFromExam(action);
-        if (proces.getProcesses().containsKey(patient)) {
-            service.editProces(States.WAITING.toString(), patient);
+        if (process.getProcesses().containsKey(patient)) {
+            service.editProcess(States.WAITING.toString(), patient);
         } else {
             service.addNewProcess(action);
         }
-        proces.getProcesses().put(patient, proces.getAcceptAppointment());
+        process.getProcesses().put(patient, process.getAcceptAppointment());
     }
 
     @AfterReturning(pointcut = "execution(* com.uns.ac.rs.xml.services.states.AcceptAppointment.editAppointment(..)) && args(action,..)")
     public void afterChangingAppointment(com.uns.ac.rs.xml.util.actions.Action action) {
         String patient = mapper.getPatientFromExam(action);
-        service.editProces(States.EXAM_CHANGED.toString(), patient);
-        proces.getProcesses().put(patient, proces.getChangedAppointment());
+        service.editProcess(States.EXAM_CHANGED.toString(), patient);
+        process.getProcesses().put(patient, process.getChangedAppointment());
     }
 
     @AfterReturning(pointcut = "execution(* com.uns.ac.rs.xml.services.states.AcceptAppointment.declineAppointment(..)) && args(action,..)")
     public void afterDecliningAppointment(com.uns.ac.rs.xml.util.actions.Action action) {
         String patient = mapper.getPatientFromExam(action);
-        service.editProces(States.END.toString(), patient);
-        proces.getProcesses().remove(patient);
+        service.editProcess(States.END.toString(), patient);
+        process.getProcesses().remove(patient);
     }
 
     @AfterReturning(pointcut = "execution(* com.uns.ac.rs.xml.services.states.AcceptAppointment.processAppointment(..)) && args(action,..)")
@@ -92,19 +92,19 @@ public class BusinessProcess extends com.uns.ac.rs.xml.util.IOStreamer {
         String doctorType = mapper.getDoctorTypeFromExam(action);
         String patient = mapper.getPatientFromExam(action);
         if (doctorType.equals(DoctorType.GENERAL_PRACTICE.toString())) {
-            service.editProces(States.GENERALIST_EXAM.toString(), patient);
-            proces.getProcesses().put(patient, proces.getGeneralistExam());
+            service.editProcess(States.GENERALIST_EXAM.toString(), patient);
+            process.getProcesses().put(patient, process.getGeneralistExam());
         } else {
-            service.editProces(States.SPECIALIST_EXAM.toString(), patient);
-            proces.getProcesses().put(patient, proces.getSpecialistExam());
+            service.editProcess(States.SPECIALIST_EXAM.toString(), patient);
+            process.getProcesses().put(patient, process.getSpecialistExam());
         }
     }
 
     @AfterReturning(pointcut = "execution(* com.uns.ac.rs.xml.services.states.ChangedAppointment.declineAppointment(..)) && args(action,..)")
     public void afterDecliningChangedAppointment(com.uns.ac.rs.xml.util.actions.Action action) {
         String patient = mapper.getPatientFromExam(action);
-        service.editProces(States.END.toString(), patient);
-        proces.getProcesses().remove(patient);
+        service.editProcess(States.END.toString(), patient);
+        process.getProcesses().remove(patient);
     }
 
     @AfterReturning(pointcut = "execution(* com.uns.ac.rs.xml.services.states.ChangedAppointment.processAppointment(..)) && args(action,..)")
@@ -112,19 +112,19 @@ public class BusinessProcess extends com.uns.ac.rs.xml.util.IOStreamer {
         String doctorType = mapper.getDoctorTypeFromExam(action);
         String patient = mapper.getPatientFromExam(action);
         if (doctorType.equals(DoctorType.GENERAL_PRACTICE.toString())) {
-            service.editProces(States.GENERALIST_EXAM.toString(), patient);
-            proces.getProcesses().put(patient, proces.getGeneralistExam());
+            service.editProcess(States.GENERALIST_EXAM.toString(), patient);
+            process.getProcesses().put(patient, process.getGeneralistExam());
         } else {
-            service.editProces(States.SPECIALIST_EXAM.toString(), patient);
-            proces.getProcesses().put(patient, proces.getSpecialistExam());
+            service.editProcess(States.SPECIALIST_EXAM.toString(), patient);
+            process.getProcesses().put(patient, process.getSpecialistExam());
         }
     }
 
     @AfterReturning(pointcut = "execution(* com.uns.ac.rs.xml.services.states.SpecialistExam.createReport(..)) && args(action,..)")
     public void afterSpecialistExam(com.uns.ac.rs.xml.util.actions.Action action) {
         String patient = mapper.getPatientfromReport(action);
-        service.editProces(States.SCHEDULING.toString(), patient);
-        proces.getProcesses().put(patient, proces.getSchedulingExam());
+        service.editProcess(States.SCHEDULING.toString(), patient);
+        process.getProcesses().put(patient, process.getSchedulingExam());
     }
 
     @AfterReturning(pointcut = "execution(* com.uns.ac.rs.xml.services.states.GeneralistExam.createDocumentation(..)) && args(action,..)")
@@ -148,20 +148,20 @@ public class BusinessProcess extends com.uns.ac.rs.xml.util.IOStreamer {
         }
 
         if (report && referral) {
-            service.editProces(States.SCHEDULING.toString(),
+            service.editProcess(States.SCHEDULING.toString(),
                     mapper.getPatientFromDocumentation(action));
-            proces.getProcesses().put(mapper.getPatientFromDocumentation(action), proces.getSchedulingExam());
+            process.getProcesses().put(mapper.getPatientFromDocumentation(action), process.getSchedulingExam());
         } else {
-            service.editProces(States.END.toString(),
+            service.editProcess(States.END.toString(),
                     mapper.getPatientFromDocumentation(action));
-            proces.getProcesses().remove(mapper.getPatientFromDocumentation(action));
+            process.getProcesses().remove(mapper.getPatientFromDocumentation(action));
         }
     }
 
     @Before("execution(* com.uns.ac.rs.xml.services.nonProcessService.ChoiceService.save(..)) && args(action,..)")
     public void beforeChangingDoctor(com.uns.ac.rs.xml.util.actions.Action action) {
         String patient = mapper.getPatientFromChoice(action);
-        if (proces.getProcesses().containsKey(patient)) {
+        if (process.getProcesses().containsKey(patient)) {
             throw new com.uns.ac.rs.xml.util.ValidationException("Not possible to changed doctors mid exam.");
         }
     }
