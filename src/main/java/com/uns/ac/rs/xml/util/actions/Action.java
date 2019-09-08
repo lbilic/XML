@@ -55,7 +55,7 @@ public class Action {
      * @param value allowed object is
      *              {@link String }
      */
-    public void setFunkcija(String value) {
+    public void setFunction(String value) {
         this.function = value;
     }
 

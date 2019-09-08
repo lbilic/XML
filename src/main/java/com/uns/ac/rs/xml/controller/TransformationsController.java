@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.uns.ac.rs.xml.services.nonProcessService.TransformationsService;
+import com.uns.ac.rs.xml.services.service.TransformationsService;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController

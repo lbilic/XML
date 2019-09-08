@@ -8,13 +8,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.uns.ac.rs.xml.domain.DTO.SearchResult;
 import com.uns.ac.rs.xml.domain.SearchQuery;
-import com.uns.ac.rs.xml.services.nonProcessService.SearchService;
+import com.uns.ac.rs.xml.services.service.SearchService;
 import com.uns.ac.rs.xml.util.actions.Action;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/search")
-public class SearchController extends ValidatorController {
+public class SearchController {
 
     @Autowired
     private SearchService searchService;
@@ -38,7 +38,6 @@ public class SearchController extends ValidatorController {
     @PostMapping(path = "/links", consumes = MediaType.APPLICATION_XML_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<SearchResult> linksToDocument(@RequestBody Action action) {
-        this.validateAction(action);
         return new ResponseEntity<>(new SearchResult(searchService.linksToDocument(action.getContext())),
                 HttpStatus.OK);
     }

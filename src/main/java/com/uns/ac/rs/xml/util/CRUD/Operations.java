@@ -1,5 +1,12 @@
 package com.uns.ac.rs.xml.util.CRUD;
 
+import com.uns.ac.rs.xml.util.database.ConfigureConnection;
+import com.uns.ac.rs.xml.util.database.DatabaseConnectionException;
+import com.uns.ac.rs.xml.util.database.DatabaseResources;
+import com.uns.ac.rs.xml.util.database.Mapper;
+import com.uns.ac.rs.xml.util.transformators.TransformerException;
+import com.uns.ac.rs.xml.util.validator.ValidationException;
+import com.uns.ac.rs.xml.util.validator.Validator;
 import org.exist.xmldb.EXistResource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -11,7 +18,7 @@ import org.w3c.dom.NodeList;
 import org.xmldb.api.base.*;
 import org.xmldb.api.modules.XQueryService;
 import org.xmldb.api.modules.XUpdateQueryService;
-import com.uns.ac.rs.xml.repository.rdf.RDFRepository;
+import com.uns.ac.rs.xml.repository.RDFRepository;
 import com.uns.ac.rs.xml.util.*;
 
 import javax.xml.parsers.DocumentBuilderFactory;

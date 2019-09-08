@@ -1,5 +1,9 @@
 package com.uns.ac.rs.xml.util;
 
+import com.uns.ac.rs.xml.util.database.ConfigureConnection;
+import com.uns.ac.rs.xml.util.database.DatabaseConnectionException;
+import com.uns.ac.rs.xml.util.database.DatabaseResources;
+import com.uns.ac.rs.xml.util.database.Mapper;
 import org.exist.xmldb.EXistResource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

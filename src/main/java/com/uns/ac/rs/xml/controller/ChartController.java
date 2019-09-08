@@ -2,7 +2,8 @@ package com.uns.ac.rs.xml.controller;
 
 import com.uns.ac.rs.xml.domain.enums.ActionType;
 import com.uns.ac.rs.xml.domain.enums.UserType;
-import com.uns.ac.rs.xml.util.ValidationException;
+import com.uns.ac.rs.xml.util.database.Mapper;
+import com.uns.ac.rs.xml.util.validator.ValidationException;
 import com.uns.ac.rs.xml.util.actions.Action;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,10 +17,13 @@ import javax.servlet.http.HttpSession;
 
 @RestController
 @RequestMapping("/charts")
-public class ChartController extends com.uns.ac.rs.xml.controller.ValidatorController {
+public class ChartController {
 
     @Autowired
-    private com.uns.ac.rs.xml.services.nonProcessService.ChartService chartService;
+    private com.uns.ac.rs.xml.services.service.ChartService chartService;
+
+    @Autowired
+    private Mapper mapper;
     
     @GetMapping(produces = MediaType.APPLICATION_XML_VALUE)
     public ResponseEntity<String> getAll() {
@@ -55,7 +59,6 @@ public class ChartController extends com.uns.ac.rs.xml.controller.ValidatorContr
 
     @PostMapping(consumes = MediaType.APPLICATION_XML_VALUE, produces = MediaType.TEXT_PLAIN_VALUE)
     public ResponseEntity<String> save(@RequestBody Action action) {
-        this.validateAction(action);
         if (action.getFunction().equals(ActionType.EDIT.toString())) {
             return new ResponseEntity<>(chartService.edit(action), HttpStatus.OK);
         }

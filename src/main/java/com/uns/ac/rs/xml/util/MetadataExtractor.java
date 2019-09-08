@@ -1,6 +1,7 @@
 package com.uns.ac.rs.xml.util;
 
 import com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl;
+import com.uns.ac.rs.xml.util.database.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ResourceUtils;
@@ -40,7 +41,7 @@ public class MetadataExtractor {
             grddlTransformer.transform(source, result);
             return new ByteArrayInputStream(((ByteArrayOutputStream) result.getOutputStream()).toByteArray());
         } catch (TransformerException | FileNotFoundException e) {
-            throw new com.uns.ac.rs.xml.util.TransformerException("Error while processing data!");
+            throw new com.uns.ac.rs.xml.util.transformators.TransformerException("Error while processing data!");
         }
 
     }

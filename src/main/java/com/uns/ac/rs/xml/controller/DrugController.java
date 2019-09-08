@@ -1,26 +1,25 @@
 package com.uns.ac.rs.xml.controller;
 
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.uns.ac.rs.xml.util.database.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.uns.ac.rs.xml.domain.enums.ActionType;
-import com.uns.ac.rs.xml.services.nonProcessService.DrugService;
-import com.uns.ac.rs.xml.util.Validator;
+import com.uns.ac.rs.xml.services.service.DrugService;
 import com.uns.ac.rs.xml.util.actions.Action;
-
-import java.util.Calendar;
 
 @RestController
 @RequestMapping("/drugs")
-public class DrugController extends ValidatorController {
+public class DrugController{
 
     @Autowired
     private DrugService drugService;
+
+    @Autowired
+    private Mapper mapper;
 
     @GetMapping(produces = MediaType.APPLICATION_XML_VALUE)
     public ResponseEntity<String> getAll() {
@@ -34,7 +33,6 @@ public class DrugController extends ValidatorController {
 
     @PostMapping(consumes = MediaType.APPLICATION_XML_VALUE, produces = MediaType.TEXT_PLAIN_VALUE)
     public ResponseEntity<String> save(@RequestBody Action action) {
-        this.validateAction(action);
         if (action.getFunction().equals(ActionType.DELETE.toString())) {
             return new ResponseEntity<>(drugService.delete(action), HttpStatus.OK);
         } else if (action.getFunction().equals(ActionType.EDIT.toString())) {

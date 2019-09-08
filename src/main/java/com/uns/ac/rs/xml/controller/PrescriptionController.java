@@ -1,22 +1,26 @@
 package com.uns.ac.rs.xml.controller;
 
 import com.uns.ac.rs.xml.domain.enums.ActionType;
+import com.uns.ac.rs.xml.util.database.Mapper;
 import com.uns.ac.rs.xml.util.actions.Action;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.uns.ac.rs.xml.services.nonProcessService.PrescriptionService;
-import com.uns.ac.rs.xml.util.ValidationException;
+import com.uns.ac.rs.xml.services.service.PrescriptionService;
+import com.uns.ac.rs.xml.util.validator.ValidationException;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController()
 @RequestMapping("/prescriptions")
-public class PrescriptionController extends ValidatorController {
+public class PrescriptionController {
 
     @Autowired
     private PrescriptionService prescriptionService;
+
+    @Autowired
+    private Mapper mapper;
 
     @GetMapping(produces = MediaType.APPLICATION_XML_VALUE)
     public ResponseEntity<String> getAll() {
@@ -30,7 +34,6 @@ public class PrescriptionController extends ValidatorController {
 
     @PostMapping(consumes = MediaType.APPLICATION_XML_VALUE, produces = MediaType.TEXT_PLAIN_VALUE)
     public ResponseEntity<String> delete(@RequestBody Action action) {
-        this.validateAction(action);
         if (action.getFunction().equals(ActionType.DELETE.toString())) {
             return new ResponseEntity<>(prescriptionService.delete(action), HttpStatus.OK);
         } else if (action.getFunction().equals(ActionType.EDIT.toString())) {

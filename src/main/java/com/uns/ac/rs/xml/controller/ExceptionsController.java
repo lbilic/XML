@@ -1,8 +1,8 @@
 package com.uns.ac.rs.xml.controller;
 
 import com.sun.org.apache.xml.internal.security.transforms.TransformationException;
-import com.uns.ac.rs.xml.util.DatabaseConnectionException;
-import com.uns.ac.rs.xml.util.ValidationException;
+import com.uns.ac.rs.xml.util.database.DatabaseConnectionException;
+import com.uns.ac.rs.xml.util.validator.ValidationException;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;

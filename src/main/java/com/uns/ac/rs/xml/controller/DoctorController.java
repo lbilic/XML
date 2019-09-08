@@ -1,6 +1,7 @@
 package com.uns.ac.rs.xml.controller;
 
-import com.uns.ac.rs.xml.services.nonProcessService.DoctorService;
+import com.uns.ac.rs.xml.services.service.DoctorService;
+import com.uns.ac.rs.xml.util.database.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -12,10 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/doctors")
-public class DoctorController extends ValidatorController {
+public class DoctorController {
 
     @Autowired
     private DoctorService doctorService;
+
+    @Autowired
+    private Mapper mapper;
 
     @GetMapping(produces = MediaType.APPLICATION_XML_VALUE)
     public ResponseEntity<String> getAll() {
