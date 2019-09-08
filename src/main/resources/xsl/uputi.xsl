@@ -1,9 +1,9 @@
 <xsl:stylesheet version="1.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:uput="http://www.zis.rs/seme/uput"
-                xmlns:uputi="http://www.zis.rs/seme/uputi"
-                xmlns:zko="http://www.zis.rs/seme/zdravstveni_karton"
-                xmlns:lkr="http://www.zis.rs/seme/lekar">
+                xmlns:uput="http://www.zis.rs/xml/schemes/uput"
+                xmlns:uputi="http://www.zis.rs/xml/schemes/uputi"
+                xmlns:zko="http://www.zis.rs/xml/schemes/zdravstveni_karton"
+                xmlns:lkr="http://www.zis.rs/xml/schemes/lekar">
 
     <xsl:template match="/">
         <html>

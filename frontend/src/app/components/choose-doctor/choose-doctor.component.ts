@@ -16,7 +16,7 @@ export class ChooseDoctorComponent implements OnInit {
 
   ngOnInit() {
     this.doctorService.getDoctors().subscribe(
-      data => this.doctors = data
+        data => this.doctors = data
     );
   }
 
@@ -32,4 +32,5 @@ export class ChooseDoctorComponent implements OnInit {
       } 
     );
   }
+
 }

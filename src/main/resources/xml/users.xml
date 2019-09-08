@@ -1,54 +1,54 @@
 <ko:users xmlns:ko="http://www.zis.rs/xml/schemes/users" xmlns:xs="http://www.w3.org/2001/XMLSchema#" xmlns:user="http://www.zis.rs/xml/schemes/user">
-    <user:user active="true" id="http://www.zis.rs/users/id66">
+    <user:user active="true" id="http://www.zis.rs/xml/schemes/users/id66">
         <user:name datatype="xs:string" property="voc:name">Nebojsa</user:name>
         <user:surname datatype="xs:string" property="voc:surname">Jovanovic</user:surname>
         <user:jmbg datatype="xs:string" property="voc:jmbg">1407986856324</user:jmbg>
         <user:username>nebojsa</user:username>
         <user:password>123456</user:password>
     </user:user>
-    <user:user active="true" id="http://www.zis.rs/users/id68">
+    <user:user active="true" id="http://www.zis.rs/xml/schemes/users/id68">
         <user:name datatype="xs:string" property="voc:name">Predrag</user:name>
         <user:surname datatype="xs:string" property="voc:surname">Stankovic</user:surname>
         <user:jmbg datatype="xs:string" property="voc:jmbg">2305979265742</user:jmbg>
         <user:username>predrag</user:username>
         <user:password>123456</user:password>
     </user:user>
-    <user:user active="true" id="http://www.zis.rs/users/id70">
+    <user:user active="true" id="http://www.zis.rs/xml/schemes/users/id70">
         <user:name datatype="xs:string" property="voc:name">Jelena</user:name>
         <user:surname datatype="xs:string" property="voc:surname">Lazarovic</user:surname>
         <user:jmbg datatype="xs:string" property="voc:jmbg">2011990324856</user:jmbg>
         <user:username>jelena</user:username>
         <user:password>123456</user:password>
     </user:user>
-    <user:user active="true" id="http://www.zis.rs/users/id72">
+    <user:user active="true" id="http://www.zis.rs/xml/schemes/users/id72">
         <user:name datatype="xs:string" property="voc:name">Jadranka</user:name>
         <user:surname datatype="xs:string" property="voc:surname">Zrnic</user:surname>
         <user:jmbg datatype="xs:string" property="voc:jmbg">0203987297351</user:jmbg>
         <user:username>jadranka</user:username>
         <user:password>123456</user:password>
     </user:user>
-    <user:user active="true" id="http://www.zis.rs/users/id74">
+    <user:user active="true" id="http://www.zis.rs/xml/schemes/users/id74">
         <user:name datatype="xs:string" property="voc:name">Milica</user:name>
         <user:surname datatype="xs:string" property="voc:surname">Paunovic</user:surname>
         <user:jmbg datatype="xs:string" property="voc:jmbg">0709989652763</user:jmbg>
         <user:username>milica</user:username>
         <user:password>123456</user:password>
     </user:user>
-    <user:user active="true" id="http://www.zis.rs/users/id76">
+    <user:user active="true" id="http://www.zis.rs/xml/schemes/users/id76">
         <user:name datatype="xs:string" property="voc:name">Bojana</user:name>
         <user:surname datatype="xs:string" property="voc:surname">Stojkovic</user:surname>
         <user:jmbg datatype="xs:string" property="voc:jmbg">2211990324856</user:jmbg>
         <user:username>bojana</user:username>
         <user:password>123456</user:password>
     </user:user>
-    <user:user active="true" id="http://www.zis.rs/users/id80">
+    <user:user active="true" id="http://www.zis.rs/xml/schemes/users/id80">
         <user:name datatype="xs:string" property="voc:name">Goran</user:name>
         <user:surname datatype="xs:string" property="voc:surname">Obradovic</user:surname>
         <user:jmbg datatype="xs:string" property="voc:jmbg">0055070707700</user:jmbg>
         <user:username>goran</user:username>
         <user:password>123456</user:password>
     </user:user>
-    <user:user active="true" id="http://www.zis.rs/users/id91">
+    <user:user active="true" id="http://www.zis.rs/xml/schemes/users/id91">
         <user:name datatype="xs:string" property="voc:name">Nikolina</user:name>
         <user:surname datatype="xs:string" property="voc:surname">Blagojevic</user:surname>
         <user:jmbg datatype="xs:string" property="voc:jmbg">2105997707700</user:jmbg>
