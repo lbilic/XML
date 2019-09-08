@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { DoctorService } from 'src/app/services/doctor.service';
 import { ReturnStatement } from '@angular/compiler';
-let parseString = require('xml2js').parseString;
 
 @Component({
   selector: 'app-choose-doctor',
@@ -19,9 +18,6 @@ export class ChooseDoctorComponent implements OnInit {
     this.doctorService.getDoctors().subscribe(
       data => this.doctors = data
     );
-    parseString(this.doctors, function (err, result) {
-      console.dir(result);
-    });
   }
 
   onSubmit(){
