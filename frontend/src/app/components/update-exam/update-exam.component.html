@@ -1,0 +1,35 @@
+<div id="wrapper">
+    <label>Choose Doctor:</label>
+    <select [(ngModel)]="chosenDoctor" (change)="onChange()">
+      <option *ngFor="let doctor of doctors"></option>
+      <option>Doc 1</option>
+      <option>Doc 2</option>
+      <option>Doc 3</option>
+    </select>
+ 
+    <div *ngIf="chosenDoctor !== null">
+      <div class="exam">
+        <label>Marko Balenovic</label>
+        
+        <select disabled class="exam-select">
+          <option>
+
+          </option>
+        </select>
+
+        <button>Edit</button>
+        <button (click)="onConfirm('1')">Confirm</button>
+      </div>
+
+      <div *ngFor="let exam of exams" class="exam">
+        {{exam}}
+        
+        <button>Edit</button>
+        <button (click)="onConfirm(exam.id)">Confirm</button>
+      </div>
+    </div>
+
+    <div *ngIf="chosenDoctor === null">
+        <label>Select Doctor First.</label>
+    </div>
+</div>

@@ -13,6 +13,10 @@ import { ChooseDoctorComponent } from './components/choose-doctor/choose-doctor.
 import { ScheduleExamComponent } from './components/schedule-exam/schedule-exam.component';
 import { MedicalRecordComponent } from './components/medical-record/medical-record.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
+import { NurseHomeComponent } from './components/nurse-home/nurse-home.component';
+import { DoctorHomeComponent } from './components/doctor-home/doctor-home.component';
+import { PatientHomeComponent } from './components/patient-home/patient-home.component';
+import { UpdateExamComponent } from './components/update-exam/update-exam.component';
 
 @NgModule({
   exports:[
@@ -27,7 +31,11 @@ import { NotificationsComponent } from './components/notifications/notifications
     ChooseDoctorComponent,
     ScheduleExamComponent,
     MedicalRecordComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    NurseHomeComponent,
+    DoctorHomeComponent,
+    PatientHomeComponent,
+    UpdateExamComponent
   ],
   imports: [
     BrowserModule,

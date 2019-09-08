@@ -15,4 +15,12 @@ export class DoctorService {
   public getExams(){
     return this.http.get<any>("http://localhost:9003/doctor/exams");
   }
+
+  public getExamsByDoctor(doctor){
+    return this.http.get<any>("http://localhost:9003/doctor/exams/"+doctor);
+  }
+
+  public confirmExam(id){
+    return this.http.post<any>("http://localhost:9003/exam/confirm", id);
+  }
 }

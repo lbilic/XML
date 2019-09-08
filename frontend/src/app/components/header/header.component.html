@@ -8,6 +8,8 @@
       <li><a routerLink="/patient/scheduleExam" routerLinkActive="active">Schedule Exam</a></li>
       <li><a routerLink="/patient/medicalRecord" routerLinkActive="active">My Medical Record</a></li>
       <li><a routerLink="/patient/notifications" routerLinkActive="active">Notifications</a></li>
+
+      <li><a routerLink="/nurse/updateExams" routerLinkActive="active">Update Exams</a></li>
       
       
       <li *ngIf='userLogged !== null'><a *ngIf="userLogged.role === 'ROLE_ADMIN'" routerLink="/administration" routerLinkActive="active" id="header-administration-btn">Administration</a></li>

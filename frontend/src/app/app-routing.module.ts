@@ -7,6 +7,9 @@ import { NotificationsComponent } from './components/notifications/notifications
 import { MedicalRecordComponent } from './components/medical-record/medical-record.component';
 import { ScheduleExamComponent } from './components/schedule-exam/schedule-exam.component';
 import { ChooseDoctorComponent } from './components/choose-doctor/choose-doctor.component';
+import { PatientHomeComponent } from './components/patient-home/patient-home.component';
+import { NurseHomeComponent } from './components/nurse-home/nurse-home.component';
+import { UpdateExamComponent } from './components/update-exam/update-exam.component';
 
 const routes: Routes = [
   {
@@ -19,7 +22,7 @@ const routes: Routes = [
   },
   {
     path: 'patient',
-    component: HomeComponent,
+    component: PatientHomeComponent,
     children: [
       {
         path: 'notifications',
@@ -36,6 +39,16 @@ const routes: Routes = [
       {
         path: 'chooseDoctor',
         component: ChooseDoctorComponent
+      }
+    ]
+  },
+  {
+    path: 'nurse',
+    component: NurseHomeComponent,
+    children: [
+      {
+        path: 'updateExams',
+        component: UpdateExamComponent
       }
     ]
   },
