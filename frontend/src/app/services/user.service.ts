@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 import { map } from 'rxjs/operators';
@@ -14,6 +14,14 @@ export class UserService {
   public currentUser: Observable<User>;
 
   private API_URL = 'localhost:9003';
+
+  private httpOptions = {
+    headers: new HttpHeaders({
+      'Accept': 'text/html, application/xhtml+xml, */*',
+      'Content-Type': 'application/xml'
+    })
+  };
+
 
   constructor(private http: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
@@ -48,7 +56,7 @@ export class UserService {
   }
 
   public chooseDoctor(doctor){
-    return this.http.post<any>("http://localhost:9003/user/chooseDoctor", doctor);
+    return this.http.post<any>("http://localhost:8080/choices", doctor, this.httpOptions);
   }
 
   public getMedicalRecord(){

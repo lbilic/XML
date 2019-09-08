@@ -97,13 +97,14 @@ public class PDFTransformator {
             // Transform DOM to HTML
             DOMSource source = new DOMSource(buildDocument(xmlPath));
             StreamResult result = new StreamResult(new FileOutputStream(htmlFile));
+
             transformer.transform(source, result);
 
         } catch (TransformerConfigurationException e) {
             e.printStackTrace();
         } catch (TransformerFactoryConfigurationError e) {
             e.printStackTrace();
-        } catch (TransformerException e) {
+        } catch (javax.xml.transform.TransformerException e) {
             e.printStackTrace();
         }
 

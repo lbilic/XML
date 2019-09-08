@@ -21,6 +21,17 @@ public class ChoiceController {
     @Autowired
     private Mapper mapper;
 
+    @RequestMapping(method = RequestMethod.OPTIONS, path = ".*")
+    public ResponseEntity options() {
+        return ResponseEntity.ok()
+                .header("Access-Control-Allow-Origin", "*")
+                .header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
+                .header("Access-Control-Allow-Credentials", "true")
+                .header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
+                .header("Access-Control-Max-Age", "1209600")
+                .build();
+    }
+
     @GetMapping(produces = MediaType.APPLICATION_XML_VALUE)
     public ResponseEntity<String> getAll() {
         return new ResponseEntity<>(choiceService.getAll(), HttpStatus.OK);
@@ -31,6 +42,7 @@ public class ChoiceController {
         return new ResponseEntity<>(choiceService.findById(mapper.getURI("choice") + id), HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(consumes = MediaType.APPLICATION_XML_VALUE, produces = MediaType.TEXT_PLAIN_VALUE)
     public ResponseEntity<String> save(@RequestBody Action action) {
         if (action.getFunction().equals(ActionType.DELETE.toString())) {

@@ -19,6 +19,7 @@ public class DoctorController {
     @Autowired
     private Mapper mapper;
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(produces = MediaType.APPLICATION_XML_VALUE)
     public ResponseEntity<String> getAll() {
         return new ResponseEntity<>(doctorService.getAll(), HttpStatus.OK);

@@ -1,10 +1,9 @@
 <div id="wrapper">
     <label>Choose Doctor:</label>
     <select [(ngModel)]="chosenDoctor">
-      <option *ngFor="let doctor of doctors"></option>
-      <option>Doc 1</option>
-      <option>Doc 2</option>
-      <option>Doc 3</option>
+      <ng-container *ngIf="doctors !== null">
+          <option *ngFor="let doctor of doctors ">{{doctor['user:user']['user:name']}} {{doctor['user:user']['user:surname']}}</option>
+      </ng-container>
     </select>
 
     <button (click)="onSubmit()">Confirm</button>
