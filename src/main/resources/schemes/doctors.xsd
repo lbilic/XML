@@ -7,7 +7,7 @@
     <xs:element name="doctors">
         <xs:complexType>
             <xs:sequence>
-                <xs:element maxOccurs="unbounded" minOccurs="0" ref="doctor:doctor"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="lkr:doctor"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified"
-           vc:minVersion="1.1" targetNamespace="http://www.zis.rs/seme/charts"
-           xmlns:zko="http://www.zis.rs/seme/chart">
+           vc:minVersion="1.1" targetNamespace="http://www.zis.rs/xml/schemes/charts"
+           xmlns:zko="http://www.zis.rs/xml/schemes/chart">
 
-    <xs:import namespace="http://www.zis.rs/seme/chart"
+    <xs:import namespace="http://www.zis.rs/xml/schemes/chart"
                schemaLocation="chart.xsd"/>
     <xs:element name="charts">
         <xs:complexType>

@@ -1,21 +1,21 @@
 <doctors:doctors xmlns:lkr="http://www.zis.rs/xml/schemes/doctor" xmlns:doctors="http://www.zis.rs/xml/schemes/doctors">
     <doctor:doctor xmlns:doctor="http://www.zis.rs/xml/schemes/doctor" about="http://www.zis.rs/doctors/id67" id="http://www.zis.rs/doctors/id67" typeof="voc:doctor">
-        <doctor:user doctor:identifier="http://www.zis.rs/korisnici/id66"/>
+        <doctor:user doctor:identifier="http://www.zis.rs/users/id66"/>
         <doctor:type datatype="xs:string" property="voc:doctor_type">general_practice</doctor:type>
         <doctor:health_care_area datatype="xs:string" property="voc:healthcareArea">odrasli</doctor:health_care_area>
     </doctor:doctor>
     <doctor:doctor xmlns:doctor="http://www.zis.rs/xml/schemes/doctor" about="http://www.zis.rs/doctors/id69" id="http://www.zis.rs/doctors/id69" typeof="voc:doctor">
-        <doctor:user doctor:identifier="http://www.zis.rs/korisnici/id68"/>
+        <doctor:user doctor:identifier="http://www.zis.rs/users/id68"/>
         <doctor:type datatype="xs:string" property="voc:doctor_type">dermatolog</doctor:type>
         <doctor:health_care_area datatype="xs:string" property="voc:healthcareArea">odrasli</doctor:health_care_area>
     </doctor:doctor>
     <doctor:doctor xmlns:doctor="http://www.zis.rs/xml/schemes/doctor" about="http://www.zis.rs/doctors/id71" id="http://www.zis.rs/doctors/id71" typeof="voc:doctor">
-        <doctor:user doctor:identifier="http://www.zis.rs/korisnici/id70"/>
+        <doctor:user doctor:identifier="http://www.zis.rs/users/id70"/>
         <doctor:type datatype="xs:string" property="voc:doctor_type">pedijatar</doctor:type>
         <doctor:health_care_area datatype="xs:string" property="voc:healthcareArea">odrasli</doctor:health_care_area>
     </doctor:doctor>
     <doctor:doctor xmlns:doctor="http://www.zis.rs/xml/schemes/doctor" about="http://www.zis.rs/doctors/id77" id="http://www.zis.rs/doctors/id77" typeof="voc:doctor">
-        <doctor:user doctor:identifier="http://www.zis.rs/korisnici/id76"/>
+        <doctor:user doctor:identifier="http://www.zis.rs/users/id76"/>
         <doctor:type datatype="xs:string" property="voc:doctor_type">general_practice</doctor:type>
         <doctor:health_care_area datatype="xs:string" property="voc:healthcareArea">odrasli</doctor:health_care_area>
     </doctor:doctor>

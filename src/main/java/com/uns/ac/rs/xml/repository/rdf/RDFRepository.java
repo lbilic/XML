@@ -121,7 +121,7 @@ public class RDFRepository {
     public String exportMetadata(String document, String format) {
         String end = connection.getDataEndpoint();
         String conditions = "?s ?p ?o";
-        String sparqlQuery = sparqlMapper.sedrugtujPodatke(end + "/" + document, conditions);
+        String sparqlQuery = sparqlMapper.selectData(end + "/" + document, conditions);
 
         QueryExecution query = QueryExecutionFactory.sparqlService(connection.getQueryEndpoint(), sparqlQuery);
 

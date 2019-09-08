@@ -87,7 +87,7 @@ public class SPARQLMapper {
         return String.format(SWITCH_TEMPLATE_GRAPH, graphURI, nodeURI, tripleti);
     }
 
-    public String sedrugtujPodatke(String graphURI, String sparqlUslovi) {
+    public String selectData(String graphURI, String sparqlUslovi) {
         return String.format(SELECT_TEMPLATE_GRAPH, graphURI, sparqlUslovi);
     }
 

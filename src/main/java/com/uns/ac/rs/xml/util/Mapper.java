@@ -51,7 +51,7 @@ public class Mapper {
     }
 
     private void initializeMap() {
-        this.xmlDatabase.put("collection", "/db/xml/");
+        this.xmlDatabase.put("collection", "/db/xml/schemes");
         this.xmlDatabase.put("doctors", "doctors.xml");
         this.xmlDatabase.put("users", "users.xml");
         this.xmlDatabase.put("nurses", "nurses.xml");

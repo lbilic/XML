@@ -3,7 +3,7 @@
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xml:base="http://www.zis.rs/rdf/voc#" >
+    xml:base="http://www.zis.rs/xml/rdf/voc#" >
     
     <rdfs:Class rdf:ID="Person">
         <rdfs:label xml:lang="sr">Person</rdfs:label>
@@ -57,7 +57,7 @@
     </rdfs:Class>
     
     
-    <rdfs:Class rdf:ID="choicedoctora">
+    <rdfs:Class rdf:ID="choice">
         <rdfs:subClassOf rdf:resource="#Document"/>
         <rdfs:label xml:lang="sr">choice doctora</rdfs:label>
         <rdfs:comment xml:lang="sr">Predstavlja dokument u zdrastvenom sistemu u kojem pacijent 
@@ -65,21 +65,21 @@
             nema izabranog doctora</rdfs:comment>
     </rdfs:Class>
     
-    <rdfs:Class rdf:ID="reportdoctora">
+    <rdfs:Class rdf:ID="report">
         <rdfs:subClassOf rdf:resource="#Document"/>
         <rdfs:label xml:lang="sr">report doctora</rdfs:label>
         <rdfs:comment xml:lang="sr">Predstavlja dokument u zdrastvenom sistemu sa podacima o 
             zdrastvenom stanju i examu pacijenta</rdfs:comment>
     </rdfs:Class>
     
-    <rdfs:Class rdf:ID="doctorskiprescription">
+    <rdfs:Class rdf:ID="prescription">
         <rdfs:subClassOf rdf:resource="#Document"/>
         <rdfs:label xml:lang="sr">doctorski prescription</rdfs:label>
         <rdfs:comment xml:lang="sr">Predstavlja dokument u zdrastvenom sistemu u kojem se nalaze
             podaci o preporucenom drugu na osnovu dijagnoze bolesti pacijenta</rdfs:comment>
     </rdfs:Class>
     
-    <rdfs:Class rdf:ID="referralZaSpecijalistickiexam">
+    <rdfs:Class rdf:ID="specialistReferral">
         <rdfs:subClassOf rdf:resource="#Document"/>
         <rdfs:label xml:lang="sr">referral za specijalisticki exam</rdfs:label>
         <rdfs:comment xml:lang="sr">Predstavlja dokument u zdrastvenom sistemu u kojem se nalaze
