@@ -89,7 +89,7 @@
 		<dependency>
 			<groupId>org.exist-db</groupId>
 			<artifactId>exist-core</artifactId>
-			<version>RELEASE</version>
+			<version>5.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>net.sf.xmldb-org</groupId>
